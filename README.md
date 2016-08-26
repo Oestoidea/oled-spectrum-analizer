@@ -5,7 +5,9 @@ This project created to show ISM 2.4 GHz spectrum on 124x64 OLED's.
 This project helps to biuld spectrum analyzer on different modules. It contains next subprojects:
 
 * [RPi_2oleds](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi_2oleds) — Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's SSD1306 
-* 
+* [Wixel_2oleds](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel_2oleds) — Pololu Wixel with SPI and/or I2C OLED's SSD1306
+* [Wixel_3oleds](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel_3oleds) — Pololu Wixel with SPI and I2C OLED's SSD1306
+* [Arduino_Nano_3oleds](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano_3oleds) — Arduino Nano v3 and CC2500+PA+LNA with SPI and I2C OLED's SSD1306
 
 Also you can find additional parts for Fritsing used in this project schemes:
 
