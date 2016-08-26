@@ -40,7 +40,7 @@ Connect OLED's to Raspberry Pi as shown on the picture.
 
 ## Raspberry Pi 3
 
-For correct operation of the display, set the library adafruit (https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script RPi_2oleds.py.
+For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/RPi/RPi_2oleds.py).
 
 ```
 sudo python3 RPi_2oleds.py
