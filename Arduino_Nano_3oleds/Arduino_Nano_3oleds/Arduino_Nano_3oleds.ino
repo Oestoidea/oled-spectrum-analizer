@@ -28,7 +28,7 @@ Adafruit_SSD1306 displaySPI1(OLED_MOSI_SPI1, OLED_CLK_SPI1, OLED_DC_SPI1, OLED_R
 Adafruit_SSD1306 displayI2C(OLED_RESET);
 
 #define RSSI_OFFSET      95  // offset for displayed data
-#define MAX_CHAN_QTY    255  // max number of channel for spacing 405.456543MHz
+#define MAX_CHAN_QTY    255  // max number of channel for spacing 405.456543 kHz
 #define MAX_DISP_LINE   127  // limit horizontal display resolution if need for small display
 #define MAX_SAMPLING    100  // qty of samples in each iteration (1...100) to found a max RSSI value
 
