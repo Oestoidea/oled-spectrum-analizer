@@ -25,3 +25,38 @@ More information about Wixel apps you can see on [official site](https://www.pol
 Connect OLED's to Wixel as shown on the picture.
 
 ![Wixel_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/fritzing-scheme/Wixel_2oleds_bb.png)
+
+## Connection map
+
+
+    
+
+        
+P0_1    RES    
+    
+    
+P0_4    CS
+P0_5    CLK
+
+        I2C OLED
+P1_0    SCK
+P1_1    SDA
+        
+        switch
+P0_0    normally open
+GND     normally open
+
+        power supply
+VIN     2.7–6.5V   
+GND     GND
+
+| Wixel    | SPI OLED      |
+| -------- |:-------------:|
+| P0_1     | RES           |
+| P0_2     | D/C           |
+| P0_3     | DIN (SDA)     |
+| P0_1     | RES           |
+| P0_1     | RES           |
+| P0_1     | RES           |
+| P0_1     | RES           |
+| P0_1     | RES           |
