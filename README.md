@@ -11,6 +11,8 @@ Raspberry Pi 3 with SPI and  OLED's SSD1306.
 3. OLED 64x128 SSD1306 I2C
 4. OLED 64x128 SSD1306 SPI
 
+![RPi_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/pics/RPi_2oleds.png)
+
 ## Wixel
 
 Download and unzip __wixelcmd__ tool for load the firmware :
@@ -36,7 +38,7 @@ sudo ./wixelcmd write RPi_2oleds.wxl -a
 
 Connect OLED's to Raspberry Pi as shown on the picture.
 
-
+![RPi_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/fritzing-scheme/RPi_2oleds_bb.png)
 
 ## Raspberry Pi 3
 
