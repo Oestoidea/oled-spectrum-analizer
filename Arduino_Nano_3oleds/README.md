@@ -19,12 +19,55 @@ Connect OLED's and CC2500+PA+LNA to Arduino Nano as shown on the picture.
 
 ## Arduino Nano
 
-For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/RPi/RPi_2oleds.py).
+Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306) libraries in Arduino EDI. This scanner based on [Scanner 2.4 GHz Range of Ready-Made Modules](https://dev.rcopen.com/forum/f8/topic397991) (Russian) written by Valeriy Yatsenkov (aka Rover).
 
-```
-sudo python3 RPi_2oleds.py
-```
+## Connection map
 
-_If you have only I2C or SPI display just comment lines with missing connection._
+| Arduino Nano | CC2500        |
+| ------------ |:-------------:|
+| D10          | CSN           |
+| D11          | SI            |
+| D12          | SO            |
+| D13          | SCLK          |
+| 3V3          | LEN           |
+| 3V3          | VCC           |
+| GND          | PEN           |
+| GND          | GND           |
 
+| Arduino Nano | SPI0 OLED     |
+| ------------ |:-------------:|
+| D9           | CS            |
+| D7           | D/C           |
+| D6           | DIN (SDA)     |
+| D5           | CLK           |
+| D4           | RES           |
+| 3V3          | VCC           |
+| GND          | GND           |
+
+| Arduino Nano | SPI1 OLED     |
+| ------------ |:-------------:|
+| D8           | CS            |
+| D7           | D/C           |
+| D6           | DIN (SDA)     |
+| D5           | CLK           |
+| D3           | RES           |
+| 3V3          | VCC           |
+| GND          | GND           |
+
+| Arduino Nano | I2C OLED      |
+| ------------ |:-------------:|
+| A5 (19)      | SCK           |
+| A4 (18)      | SDA           |
+| 3V3          | VCC           |
+| GND          | GND           |
+
+| Arduino Nano | switch        |
+| ------------ |:-------------:|
+| A3 (17)      | normally open |
+| GND          | normally open |
+
+| Arduino Nano | power supply  |
+| ------------ |:-------------:|
+| 5V           | 5V            |
+| GND          | GND           |
 
