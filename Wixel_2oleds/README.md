@@ -15,7 +15,7 @@ Spectrum analyzer on Pololu Wixel with SPI and/or I2C OLED's SSD1306. This schem
 Put the firmware on Wixel with parameters __spi_on__ and __i2c_on__. For example, to compile and download the firmware with [wixel-sdk](http://pololu.github.io/wixel-sdk/) on OS Windows:
 
 ```
-C:\wixel-sdk>make load_spi_spectrum S="spi_on=1 i2c_on=1"
+C:\wixel-sdk>make load_Wixel_2oleds S="spi_on=1 i2c_on=1"
 ```
 
 More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b).
