@@ -1,44 +1,23 @@
-# RPi_2oleds
+# Arduino_Nano_3oleds
 
-Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's SSD1306.
+Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED's SSD1306.
 
 ## Equipment
 
-1. Raspberry Pi 3 (OS Raspbian)
-2. Pololu Wixel
+1. Arduino Nano v. 3 (with 3.3V)
+2. TI CC2500+PA+LNA module with external antenna
 3. OLED 64x128 SSD1306 I2C
-4. OLED 64x128 SSD1306 SPI
+4. Two OLED`s 64x128 SSD1306 SPI
 
-![RPi_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/pics/RPi_2oleds.png)
+![Arduino_Nano_3oleds_photo]()
 
-## Wixel
+## Displays and CC2500+PA+LNA module
 
-Download and unzip __wixelcmd__ tool for load the firmware :
+Connect OLED's and CC2500+PA+LNA to Arduino Nano as shown on the picture.
 
-```
-wget https://www.pololu.com/file/0J872/wixel-arm-linux-gnueabihf-150527.tar.gz
-tar -xzvf wixel-arm-linux-gnueabihf-150527.tar.gz
-```
+![Arduino_Nano_3oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano_3oleds/fritzing-scheme/Arduino_Nano_3oleds_bb.png)
 
-Сonnect the Pololu Wixel to Raspberry Pi by USB and check the connection:
-
-```
-sudo ./wixelcmd list
-```
-
-Put the firmware on Wixel:
-
-```
-sudo ./wixelcmd write RPi_2oleds.wxl -a
-```
-
-## Displays
-
-Connect OLED's to Raspberry Pi as shown on the picture.
-
-![RPi_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/fritzing-scheme/RPi_2oleds_bb.png)
-
-## Raspberry Pi 3
+## Arduino Nano
 
 For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/RPi/RPi_2oleds.py).
 
@@ -47,3 +26,5 @@ sudo python3 RPi_2oleds.py
 ```
 
 _If you have only I2C or SPI display just comment lines with missing connection._
+
+
