@@ -71,3 +71,6 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | 5V           | 5V            |
 | GND          | GND           |
 
+## Problems
+
+Arduino Nano does not have enough memory, because it was not possible to realize the display (I2C) of available channels. The project requires further optimization.
