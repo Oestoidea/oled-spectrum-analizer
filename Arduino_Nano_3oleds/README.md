@@ -6,8 +6,8 @@ Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED'
 
 1. Arduino Nano v3.0 (with 3.3V)
 2. TI CC2500+PA+LNA module with external antenna
-3. OLED 64x128 SSD1306 I2C
-4. Two OLED`s 64x128 SSD1306 SPI
+3. OLED 128×64 SSD1306 I2C
+4. Two OLED`s 128×64 SSD1306 SPI
 
 ![Arduino_Nano_3oleds_photo]()
 
