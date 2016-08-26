@@ -1,4 +1,4 @@
-This project created to show ISM 2.4 GHz spectrum on 124x64 OLED's.
+This project created to show ISM 2.4 GHz spectrum on OLED's.
 
 # Structure
 
