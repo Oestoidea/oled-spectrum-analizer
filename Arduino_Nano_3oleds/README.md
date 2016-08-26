@@ -1,10 +1,10 @@
 # Arduino_Nano_3oleds
 
-Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED's SSD1306.
+Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED's SSD1306. The spectral width is 2400.01–2503.40 MHz with spacing in 405.456543 kHz on two SPI displays. Displays logo on I2C display. This scheme takes less then 50mA (on 5V).
 
 ## Equipment
 
-1. Arduino Nano v. 3 (with 3.3V)
+1. Arduino Nano v3.0 (with 3.3V)
 2. TI CC2500+PA+LNA module with external antenna
 3. OLED 64x128 SSD1306 I2C
 4. Two OLED`s 64x128 SSD1306 SPI
