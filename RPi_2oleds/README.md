@@ -47,3 +47,26 @@ sudo python3 RPi_2oleds.py
 ```
 
 _If you have only I2C or SPI display just comment lines with missing connection._
+
+## Connection map
+
+| RPi         | SPI OLED      |
+| ----------- |:-------------:|
+| GPIO25 (22) | RES           |
+| GPIO9 (21)  | D/C           |
+| GPIO10 (19) | DIN (SDA)     |
+| GPIO8 (24)  | CS            |
+| GPIO11 (23) | CLK           |
+| 3V3 (17)    | VCC           |
+| GND (20)    | GND           |
+
+| RPi       | I2C OLED      |
+| --------- |:-------------:|
+| GPIO3 (5) | SCK           |
+| GPIO2 (3) | SDA           |
+| 3V3 (1)   | VCC           |
+| GND (6)   | GND           |
+
+| RPi      | Wixel         |
+| -------- |:-------------:|
+| USB      | mini USB      |

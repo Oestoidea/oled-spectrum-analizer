@@ -1,49 +1,56 @@
-# RPi_2oleds
+# Wixel_2oleds
 
-Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's SSD1306.
+Spectrum analyzer on Pololu Wixel with SPI and/or I2C OLED's SSD1306. This scheme takes less then 10mA (on 5V).
 
 ## Equipment
 
-1. Raspberry Pi 3 (OS Raspbian)
-2. Pololu Wixel
-3. OLED 64x128 SSD1306 I2C
-4. OLED 64x128 SSD1306 SPI
+1. Pololu Wixel
+2. OLED 64x128 SSD1306 I2C
+3. OLED 64x128 SSD1306 SPI
 
-![RPi_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/pics/RPi_2oleds.png)
+![Wixel_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds.png)
 
 ## Wixel
 
-Download and unzip __wixelcmd__ tool for load the firmware :
+Put the firmware on Wixel with parameters __spi_on__ and __i2c_on__. For example, to compile and download the firmware with [wixel-sdk](http://pololu.github.io/wixel-sdk/) on OS Windows:
 
 ```
-wget https://www.pololu.com/file/0J872/wixel-arm-linux-gnueabihf-150527.tar.gz
-tar -xzvf wixel-arm-linux-gnueabihf-150527.tar.gz
+C:\wixel-sdk>make load_Wixel_2oleds S="spi_on=1 i2c_on=1"
 ```
 
-Сonnect the Pololu Wixel to Raspberry Pi by USB and check the connection:
-
-```
-sudo ./wixelcmd list
-```
-
-Put the firmware on Wixel:
-
-```
-sudo ./wixelcmd write RPi_2oleds.wxl -a
-```
+More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b).
 
 ## Displays
 
-Connect OLED's to Raspberry Pi as shown on the picture.
+Connect OLED's to Wixel as shown on the picture.
 
-![RPi_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/fritzing-scheme/RPi_2oleds_bb.png)
+![Wixel_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/fritzing-scheme/Wixel_2oleds_bb.png)
 
-## Raspberry Pi 3
+## Connection map
 
-For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/RPi/RPi_2oleds.py).
+| Wixel    | SPI OLED      |
+| -------- |:-------------:|
+| P0_1     | RES           |
+| P0_2     | D/C           |
+| P0_3     | DIN (SDA)     |
+| P0_4     | CS            |
+| P0_5     | CLK           |
+| 3V3      | VCC           |
+| GND      | GND           |
 
-```
-sudo python3 RPi_2oleds.py
-```
+| Wixel    | I2C OLED      |
+| -------- |:-------------:|
+| P1_0     | SCK           |
+| P1_1     | SDA           |
+| 3V3      | VCC           |
+| GND      | GND           |
 
-_If you have only I2C or SPI display just comment lines with missing connection._
+| Wixel    | switch        |
+| -------- |:-------------:|
+| P0_0     | normally open |
+| GND      | normally open |
+
+| Wixel    | power supply  |
+| -------- |:-------------:|
+| VIN      | 2.7–6.5V      |
+| GND      | GND           |

@@ -1,49 +1,76 @@
-# RPi_2oleds
+# Arduino_Nano_3oleds
 
-Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's SSD1306.
+Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED's SSD1306. The spectral width is 2400.01–2503.40 MHz with spacing in 405.456543 kHz on two SPI displays. Displays logo on I2C display. This scheme takes less then 50mA (on 5V).
 
 ## Equipment
 
-1. Raspberry Pi 3 (OS Raspbian)
-2. Pololu Wixel
+1. Arduino Nano v3.0 (with 3.3V)
+2. TI CC2500+PA+LNA module with external antenna
 3. OLED 64x128 SSD1306 I2C
-4. OLED 64x128 SSD1306 SPI
+4. Two OLED`s 64x128 SSD1306 SPI
 
-![RPi_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/pics/RPi_2oleds.png)
+![Arduino_Nano_3oleds_photo]()
 
-## Wixel
+## Displays and CC2500+PA+LNA module
 
-Download and unzip __wixelcmd__ tool for load the firmware :
+Connect OLED's and CC2500+PA+LNA to Arduino Nano as shown on the picture.
 
-```
-wget https://www.pololu.com/file/0J872/wixel-arm-linux-gnueabihf-150527.tar.gz
-tar -xzvf wixel-arm-linux-gnueabihf-150527.tar.gz
-```
+![Arduino_Nano_3oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano_3oleds/fritzing-scheme/Arduino_Nano_3oleds_bb.png)
 
-Сonnect the Pololu Wixel to Raspberry Pi by USB and check the connection:
+## Arduino Nano
 
-```
-sudo ./wixelcmd list
-```
+Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306) libraries in Arduino EDI. This scanner based on [Scanner 2.4 GHz Range of Ready-Made Modules](https://dev.rcopen.com/forum/f8/topic397991) (Russian) written by Valeriy Yatsenkov (aka Rover).
 
-Put the firmware on Wixel:
+## Connection map
 
-```
-sudo ./wixelcmd write RPi_2oleds.wxl -a
-```
+| Arduino Nano | CC2500        |
+| ------------ |:-------------:|
+| D10          | CSN           |
+| D11          | SI            |
+| D12          | SO            |
+| D13          | SCLK          |
+| 3V3          | LEN           |
+| 3V3          | VCC           |
+| GND          | PEN           |
+| GND          | GND           |
 
-## Displays
+| Arduino Nano | SPI0 OLED     |
+| ------------ |:-------------:|
+| D9           | CS            |
+| D7           | D/C           |
+| D6           | DIN (SDA)     |
+| D5           | CLK           |
+| D4           | RES           |
+| 3V3          | VCC           |
+| GND          | GND           |
 
-Connect OLED's to Raspberry Pi as shown on the picture.
+| Arduino Nano | SPI1 OLED     |
+| ------------ |:-------------:|
+| D8           | CS            |
+| D7           | D/C           |
+| D6           | DIN (SDA)     |
+| D5           | CLK           |
+| D3           | RES           |
+| 3V3          | VCC           |
+| GND          | GND           |
 
-![RPi_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/fritzing-scheme/RPi_2oleds_bb.png)
+| Arduino Nano | I2C OLED      |
+| ------------ |:-------------:|
+| A5 (19)      | SCK           |
+| A4 (18)      | SDA           |
+| 3V3          | VCC           |
+| GND          | GND           |
 
-## Raspberry Pi 3
+| Arduino Nano | switch        |
+| ------------ |:-------------:|
+| A3 (17)      | normally open |
+| GND          | normally open |
 
-For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/RPi/RPi_2oleds.py).
+| Arduino Nano | power supply  |
+| ------------ |:-------------:|
+| 5V           | 5V            |
+| GND          | GND           |
 
-```
-sudo python3 RPi_2oleds.py
-```
+## Problems
 
-_If you have only I2C or SPI display just comment lines with missing connection._
+Arduino Nano does not have enough memory, because it was not possible to realize the display (I2C) of available channels. The project requires further optimization.
