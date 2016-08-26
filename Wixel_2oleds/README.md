@@ -35,17 +35,17 @@ Connect OLED's to Wixel as shown on the picture.
 | P0_3     | DIN (SDA)     |
 | P0_4     | CS            |
 | P0_5     | CLK           |
-| -------- |:-------------:|
+
 | Wixel    | I2C OLED      |
 | -------- |:-------------:|
 | P1_0     | SCK           |
 | P1_1     | SDA           |
-| -------- |:-------------:|
+
 | Wixel    | switch        |
 | -------- |:-------------:|
 | P0_0     | normally open |
 | GND      | normally open |
-| -------- |:-------------:|
+
 | Wixel    | power supply  |
 | -------- |:-------------:|
 | VIN      | 2.7–6.5V      |
