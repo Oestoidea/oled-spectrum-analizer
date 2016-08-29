@@ -15,7 +15,7 @@ Also you can find additional parts for Fritsing used in this project schemes:
 * [Pololu Wixel](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz) 
 * [OLED 0.96" 128×64 SPI SSD1306](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz)
 * [OLED 0.96" 128×64 I2C SSD1306](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)
-* [OLED 0.95" 96×64 SPI SSD1331]()
+* [OLED 0.95" 96×64 SPI SSD1331](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz)
 * [CC2500+PA+LNA](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/CC2500%2BPA%2BLNA.fzpz)
 
 # Author
