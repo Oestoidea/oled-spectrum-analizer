@@ -6,8 +6,8 @@ Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's 
 
 1. Raspberry Pi 3 (OS Raspbian)
 2. Pololu Wixel
-3. OLED 64x128 SSD1306 I2C
-4. OLED 64x128 SSD1306 SPI
+3. OLED 128×64 SSD1306 I2C
+4. OLED 128×64 SSD1306 SPI
 
 ![RPi_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/pics/RPi_2oleds.png)
 

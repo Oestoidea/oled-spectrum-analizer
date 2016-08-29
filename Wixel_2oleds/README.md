@@ -5,8 +5,8 @@ Spectrum analyzer on Pololu Wixel with SPI and/or I2C OLED's SSD1306. This schem
 ## Equipment
 
 1. Pololu Wixel
-2. OLED 64x128 SSD1306 I2C
-3. OLED 64x128 SSD1306 SPI
+2. OLED 128×64 or 128×32 SSD1306 I2C
+3. OLED 128×64 SSD1306 SPI
 
 ![Wixel_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds.png)
 
