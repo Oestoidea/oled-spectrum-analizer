@@ -5,7 +5,7 @@ Spectrum analyzer on Pololu Wixel with SPI OLED's SSD1331. This scheme takes les
 ## Equipment
 
 1. Pololu Wixel
-2. OLED 64x128 SSD1331 SPI
+2. OLED 0.95" 96×64 SPI SSD1331
 
 ![Wixel_oled_photo]()
 
