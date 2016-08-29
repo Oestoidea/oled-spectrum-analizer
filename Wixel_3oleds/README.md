@@ -5,8 +5,8 @@ Spectrum analyzer on Pololu Wixel (CC2511F32) with SPI and/or I2C OLED's SSD1306
 ## Equipment
 
 1. Pololu Wixel
-2. OLED 128×64 SSD1306 I2C
-3. Two OLED`s 128×64 SSD1306 SPI
+2. OLED 0.96" 128×64 I2C SSD1306
+3. Two OLED`s 0.96" 128×64 SPI SSD1306
 
 ![Wixel_3oleds_photo]()
 
