@@ -21,7 +21,7 @@ More information about Wixel apps you can see on [official site](https://www.pol
 
 ## Displays
 
-Connect OLED's to Wixel as shown on the picture.
+Connect OLED's to Wixel as shown on the picture. The initialization and some features borrowed from the project [RGB OLED SSD1331](https://github.com/Seeed-Studio/RGB_OLED_SSD1331) by Lawliet Zou (Seeed Studio).
 
 ![Wixel_oled_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/fritzing-scheme/Wixel_oled_bb.png)
 
