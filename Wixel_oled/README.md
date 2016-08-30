@@ -17,7 +17,7 @@ Put the firmware on Wixel. For example, to compile and download the firmware wit
 C:\wixel-sdk>make load_Wixel_oled
 ```
 
-More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b).
+More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b). This scanner based on [Spectrum Analyzer](https://github.com/pololu/wixel-sdk/tree/dev/david/analyzer/apps/spectrum_analyzer) written by David E. Grayson.
 
 ## Displays
 
