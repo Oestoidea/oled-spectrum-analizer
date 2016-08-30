@@ -1041,17 +1041,11 @@ void checkRadioChannels(void)
             rssiHalfValue[channel/2] = (int16) ((rssiValue[channel] + rssiValue[channel+1]) / 2);
             
             if (rssiHalfValue[channel/2] <= -105)
-            {
                 rssiHalfValue[channel/2] == 0x00;
-            }
             else if (rssiHalfValue[channel/2] >= -53) // -42 place for grid
-            {
                 rssiHalfValue[channel/2] == 0xFF;
-            }
             else
-            {
                 rssiHalfValue[channel/2] += 105;
-            }
         }
         
         if (!isPinHigh(0) || !isPinHigh(12) || !isPinHigh(13))
