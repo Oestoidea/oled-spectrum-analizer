@@ -18,7 +18,7 @@ Put the firmware on Wixel with parameters __show_grid__ (for grids) and __I2C_on
 C:\wixel-sdk>make load_Wixel_3oleds S="show_grid=1 I2C_on=1"
 ```
 
-More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b).
+More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b). This scanner based on [Spectrum Analyzer](https://github.com/pololu/wixel-sdk/tree/dev/david/analyzer/apps/spectrum_analyzer) written by David E. Grayson.
 
 ## Displays
 
