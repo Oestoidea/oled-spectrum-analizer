@@ -47,15 +47,6 @@ void updateLeds(void)
 	LED_YELLOW(0);
 }
 
-void spiInit(void)
-{
-	spi0MasterInit();
-	spi0MasterSetFrequency(3000000);
-	spi0MasterSetClockPolarity(SPI_POLARITY_IDLE_LOW);		// Sets the clock polarity CPOL = 0 (SPI_POLARITY_IDLE_HIGH)
-	spi0MasterSetClockPhase(SPI_PHASE_EDGE_LEADING);		// Sets the clock phase CPHA = 0 (SPI_PHASE_EDGE_TRAILING)
-	spi0MasterSetBitOrder(SPI_BIT_ORDER_MSB_FIRST);			// The most-significant bit is transmitted first	
-}
-
 void sendCmd(uint8 c)
 {
     DClow;
@@ -70,288 +61,6 @@ void sendData(uint8 c)
 	CSlow;
 	spi0MasterSendByte(c);
 	CShigh;
-}
-
-void oledSpiInit(void)
-{
-    RESlow;
-    delayMicroseconds(3);
-	REShigh;
-   
-    sendCmd(CMD_DISPLAY_OFF);          //Display Off
-    sendCmd(CMD_SET_CONTRAST_A);       //Set contrast for color A
-    sendCmd(0x91);                     //145
-    sendCmd(CMD_SET_CONTRAST_B);       //Set contrast for color B
-    sendCmd(0x50);                     //80
-    sendCmd(CMD_SET_CONTRAST_C);       //Set contrast for color C
-    sendCmd(0x7D);                     //125
-    sendCmd(CMD_MASTER_CURRENT_CONTROL);//master current control
-    sendCmd(0x06);                     //6
-    sendCmd(CMD_SET_PRECHARGE_SPEED_A);//Set Second Pre-change Speed For ColorA
-    sendCmd(0x64);                     //100
-    sendCmd(CMD_SET_PRECHARGE_SPEED_B);//Set Second Pre-change Speed For ColorB
-    sendCmd(0x78);                     //120
-    sendCmd(CMD_SET_PRECHARGE_SPEED_C);//Set Second Pre-change Speed For ColorC
-    sendCmd(0x64);                     //100
-    sendCmd(CMD_SET_REMAP);            //set remap & data format
-    //sendCmd(0x72);                     //0x72              
-    sendCmd(0x70);                     //0x70             
-    sendCmd(CMD_SET_DISPLAY_START_LINE);//Set display Start Line
-    sendCmd(0x0);
-    sendCmd(CMD_SET_DISPLAY_OFFSET);   //Set display offset
-    sendCmd(0x0);
-    sendCmd(CMD_NORMAL_DISPLAY);       //Set display mode
-    //sendCmd(CMD_INVERSE_DISPLAY);       //Set display mode
-    sendCmd(CMD_SET_MULTIPLEX_RATIO);  //Set multiplex ratio
-    sendCmd(0x3F);
-    sendCmd(CMD_SET_MASTER_CONFIGURE); //Set master configuration
-    sendCmd(0x8E);
-    sendCmd(CMD_POWER_SAVE_MODE);      //Set Power Save Mode
-    sendCmd(0x00);                     //0x00
-    sendCmd(CMD_PHASE_PERIOD_ADJUSTMENT);//phase 1 and 2 period adjustment
-    sendCmd(0x31);                     //0x31
-    sendCmd(CMD_DISPLAY_CLOCK_DIV);    //display clock divider/oscillator frequency
-    sendCmd(0xF0);
-    sendCmd(CMD_SET_PRECHARGE_VOLTAGE);//Set Pre-Change Level
-    sendCmd(0x3A);
-    sendCmd(CMD_SET_V_VOLTAGE);        //Set vcomH
-    sendCmd(0x3E);
-    sendCmd(CMD_DEACTIVE_SCROLLING);   //disable scrolling
-    sendCmd(CMD_NORMAL_BRIGHTNESS_DISPLAY_ON);//set display on
-    
-	DChigh;
-}
-
-void analyzerInit()
-{
-    radioRegistersInit();
-
-    MCSM0 = 0x14;    // Auto-calibrate  when going from idle to RX or TX.
-    MCSM1 = 0x00;    // Disable CCA.  After RX, go to IDLE.  After TX, go to IDLE.
-    // We leave MCSM2 at its default value = 0x07
-    MDMCFG2 = 0x70;   //disable sync word detection
-    RFST = 4; //idle radio
-}
-
-
-uint16 averageChannel(uint8 first, uint8 last)
-{
-	uint8 i;
-	uint16 rssiChannelSum;
-	
-	rssiChannelSum = 0;
-	for (i = first; i < last + 1; i++)
-		rssiChannelSum += rssiValue[i] + 105;
-	return (uint16) (10 * rssiChannelSum / (last - first + 1));
-}
-
-void normalizedWiFi(void)
-{
-	uint8 i;
-	uint16 max = WiFi[2];
-    
-	for (i = 2; i < 12; i++)
-	{
-		if (WiFi[i] > max)
-			max = WiFi[i];
-	}
-	
-	for(i = 2; i < 12; i++)
-		WiFi[i] = (uint8) (20 * (max - WiFi[i]) / max);
-}
-
-void normalizedZigBee(void)
-{
-	uint8 i;
-	uint16 max = ZigBee[12];
-    
-	for (i = 12; i < 25; i++)
-	{
-		if (ZigBee[i] > max)
-			max = ZigBee[i];
-	}
-	
-	for(i = 12; i < 25; i++)
-		ZigBee[i] = (uint8) (20 * (max - ZigBee[i]) / max);
-}
-
-
-
-/*
-uint16 averageChannel(uint8 first, uint8 last)
-{
-	uint8 i;
-	uint16 rssiChannelSum;
-	
-	rssiChannelSum = 0;
-	for (i = first; i < last + 1; i++)
-		rssiChannelSum -= rssiValue[i];
-	return (uint16) (10 * rssiChannelSum / (last - first + 1));
-	//return rssiChannelSum;
-}
-
-void normalizedWiFi(void)
-{
-	uint8 i;
-	uint16 max = WiFi[2];
-    
-	for (i = 2; i < 12; i++)
-	{
-		if (WiFi[i] > max)
-			max = WiFi[i];
-	}
-	
-	for(i = 2; i < 12; i++)
-		//WiFi[i] = (uint16) (20 * (max - WiFi[i])) / max;
-		//WiFi[i] = (uint16) ((200 * (max - WiFi[i])) / max / 10);
-		//WiFi[i] = (uint16) ((20 - 20 * WiFi[i] / max) / 1);
-        WiFi[i] = (uint16) (20 * (max - WiFi[i]) / max);
-}
-
-void normalizedZigBee(void)
-{
-	uint8 i;
-	uint16 max = ZigBee[12];
-    
-	for (i = 12; i < 25; i++)
-	{
-		if (ZigBee[i] > max)
-			max = ZigBee[i];
-	}
-	
-	for(i = 12; i < 25; i++){
-		ZigBee[i] = (uint16) (20 * (max - ZigBee[i]) / max);
-        ZigBeeNormalized[i] = (uint8) (200 * (max - ZigBee[i])) / max;}
-}
-*/
-
-uint8 minWiFi(void)
-{
-	uint8 i;
-	uint8 minChannelWiFi = 2;
-	uint16 min = WiFi[2];
-    
-	for (i = 2; i < 12; i++)
-	{
-		if (WiFi[i] < min)
-		{
-			min = WiFi[i];
-            minChannelWiFi = i;
-        }
-	}
-	
-    return minChannelWiFi;
-}
-
-uint8 minZigBee(void)
-{
-	uint8 i;
-	uint8 minChannelZigBee = 12;
-	uint16 min = ZigBee[12];
-    
-	for (i = 12; i < 25; i++)
-	{
-		if (ZigBee[i] < min)
-        {
-			min = ZigBee[i];
-            minChannelZigBee = i;
-        }
-	}
-    
-    return minChannelZigBee;
-}
-
-void checkRadioChannels(void)
-{
-    uint16 i;
-    uint16 channel;
-	
-    LED_GREEN(1);
-	
-    for (channel = 0; channel < 256; channel++)
-	{
-        int32 rssiSum;
-
-        rssiValue[channel] = -115;
-
-        while(MARCSTATE != 1);  //radio should already be idle, but check anyway
-        CHANNR = channel;
-        RFST = 2;  // radio in RX mode and autocal
-        while(MARCSTATE != 13);  //wait for RX mode
-        rssiSum = 0;
-        for (i = 0; i < 100; i++)
-		{
-            if (TCON & 2) //radio byte available?
-			{
-                uint8 rfdata = RFD; // read byte
-                TCON &= ~2; //clear ready flag
-            }
-            rssiSum += radioRssi();
-        }
-        RFST = 4; //idle radio
-        rssiValue[channel] = (int16) (rssiSum / 100);
-		
-		// подготовка к выводу
-		
-		if (channel % 2 == 0) // even
-		{
-			rssiHalfValue[channel/2] = (int16) ((rssiValue[channel] + rssiValue[channel+1]) / 2);
-			
-			if (rssiHalfValue[channel/2] <= -105)
-			{
-				rssiHalfValue[channel/2] == 0x00;
-			}
-			else if (rssiHalfValue[channel/2] >= -53) // -42 place for grid
-			{
-				rssiHalfValue[channel/2] == 0xFF;
-			}
-			else
-			{
-				rssiHalfValue[channel/2] += 105;
-			}
-		}
-    }  // the above loop takes about 414 ms on average, so about 1.6 ms/channel
-    
-    WiFi[2] = averageChannel(10,84);
-	WiFi[3] = averageChannel(28,102);
-	WiFi[4] = averageChannel(45,119);
-	WiFi[5] = averageChannel(63,136);
-	WiFi[6] = averageChannel(80,154);
-	WiFi[7] = averageChannel(98,171);
-	WiFi[8] = averageChannel(115,189);
-	WiFi[9] = averageChannel(133,206);
-	WiFi[10] = averageChannel(150,224);
-	WiFi[11] = averageChannel(167,241);
-	
-	minWiFiChannel = minWiFi();
-    normalizedWiFi();
-    
-    ZigBee[12] = averageChannel(16,30);
-	ZigBee[13] = averageChannel(33,47);
-	ZigBee[14] = averageChannel(51,65);
-	ZigBee[15] = averageChannel(68,82);
-	ZigBee[16] = averageChannel(85,99);
-	ZigBee[17] = averageChannel(103,117);
-	ZigBee[18] = averageChannel(120,134);
-	ZigBee[19] = averageChannel(138,152);
-	ZigBee[20] = averageChannel(155,169);
-	ZigBee[21] = averageChannel(173,187);
-	ZigBee[22] = averageChannel(190,204);
-	ZigBee[23] = averageChannel(208,222);
-	ZigBee[24] = averageChannel(225,239);
-	
-	minZigBeeChannel = minZigBee();
-    normalizedZigBee();
-    
-    LED_GREEN(0);
-}
-
-uint8 power(uint8 base, uint16 n)
-{
-	uint8 p;
-	for (p = 1; n > 0; --n)
-		p *= base;
-	return p;
 }
 
 void drawPixel(uint8 x, uint8 y, uint16 color)
@@ -1101,11 +810,295 @@ void drawBarchartCurrentMax(void)
     drawNumber(channelValueMaxTemp + 4, rssiHalfValue[channelValueMaxCurrent], rssiValueMax1, 0, colorCurrent);
     drawNumber(channelValueMaxTemp + 8, rssiHalfValue[channelValueMaxCurrent], rssiValueMax0, 0, colorCurrent);
 }
+
+void pressButtoms(void)
+{
+    uint8 channel;
     
+    if (!isPinHigh(12) && state != 2 && pause) // Measure voltage on P1_2
+    {
+        for (channel = 96; channel > 0; channel--)
+        {
+            rssiHalfValueMax[channel] = 0;
+            rssiValueMax = 0;
+            channelValueMax = 0;
+        }
+        
+        //clearWindow(0, 0, 95, 63);
+    }
+    
+    if (!isPinHigh(13) && pause) // Measure voltage on P1_3
+    {
+        if (state == 2)
+            state = 0;
+        else
+            state++;
+        
+        switch(state)
+        {
+        case 0:
+            clearWindow(0, 0, 95, 63);
+            drawGrid(colorGrid);
+            break;
+        case 1:
+            clearWindow(0, 54, 95, 63);
+            drawStatistics(colorGrid);
+            break;
+        case 2:
+            clearWindow(0, 0, 95, 63);
+            drawGridChannel(colorMax);
+            break;
+        }
+      
+        while(!isPinHigh(13));
+    }
+    
+    if (!isPinHigh(0)) // Measure voltage on P0_0
+    {
+        pause = !pause;
+        while(!isPinHigh(0));
+    }
+}
+
+void spiInit(void)
+{
+	spi0MasterInit();
+	spi0MasterSetFrequency(3000000);
+	spi0MasterSetClockPolarity(SPI_POLARITY_IDLE_LOW);		// Sets the clock polarity CPOL = 0 (SPI_POLARITY_IDLE_HIGH)
+	spi0MasterSetClockPhase(SPI_PHASE_EDGE_LEADING);		// Sets the clock phase CPHA = 0 (SPI_PHASE_EDGE_TRAILING)
+	spi0MasterSetBitOrder(SPI_BIT_ORDER_MSB_FIRST);			// The most-significant bit is transmitted first	
+}
+
+void oledSpiInit(void)
+{
+    RESlow;
+    delayMicroseconds(3);
+	REShigh;
+    delayMicroseconds(3);
+   
+    sendCmd(CMD_DISPLAY_OFF);          //Display Off
+    sendCmd(CMD_SET_CONTRAST_A);       //Set contrast for color A
+    sendCmd(0x91);                     //145
+    sendCmd(CMD_SET_CONTRAST_B);       //Set contrast for color B
+    sendCmd(0x50);                     //80
+    sendCmd(CMD_SET_CONTRAST_C);       //Set contrast for color C
+    sendCmd(0x7D);                     //125
+    sendCmd(CMD_MASTER_CURRENT_CONTROL);//master current control
+    sendCmd(0x06);                     //6
+    sendCmd(CMD_SET_PRECHARGE_SPEED_A);//Set Second Pre-change Speed For ColorA
+    sendCmd(0x64);                     //100
+    sendCmd(CMD_SET_PRECHARGE_SPEED_B);//Set Second Pre-change Speed For ColorB
+    sendCmd(0x78);                     //120
+    sendCmd(CMD_SET_PRECHARGE_SPEED_C);//Set Second Pre-change Speed For ColorC
+    sendCmd(0x64);                     //100
+    sendCmd(CMD_SET_REMAP);            //set remap & data format
+    //sendCmd(0x72);                     //0x72              
+    sendCmd(0x70);                     //0x70             
+    sendCmd(CMD_SET_DISPLAY_START_LINE);//Set display Start Line
+    sendCmd(0x0);
+    sendCmd(CMD_SET_DISPLAY_OFFSET);   //Set display offset
+    sendCmd(0x0);
+    sendCmd(CMD_NORMAL_DISPLAY);       //Set display mode
+    //sendCmd(CMD_INVERSE_DISPLAY);       //Set display mode
+    sendCmd(CMD_SET_MULTIPLEX_RATIO);  //Set multiplex ratio
+    sendCmd(0x3F);
+    sendCmd(CMD_SET_MASTER_CONFIGURE); //Set master configuration
+    sendCmd(0x8E);
+    sendCmd(CMD_POWER_SAVE_MODE);      //Set Power Save Mode
+    sendCmd(0x00);                     //0x00
+    sendCmd(CMD_PHASE_PERIOD_ADJUSTMENT);//phase 1 and 2 period adjustment
+    sendCmd(0x31);                     //0x31
+    sendCmd(CMD_DISPLAY_CLOCK_DIV);    //display clock divider/oscillator frequency
+    sendCmd(0xF0);
+    sendCmd(CMD_SET_PRECHARGE_VOLTAGE);//Set Pre-Change Level
+    sendCmd(0x3A);
+    sendCmd(CMD_SET_V_VOLTAGE);        //Set vcomH
+    sendCmd(0x3E);
+    sendCmd(CMD_DEACTIVE_SCROLLING);   //disable scrolling
+    sendCmd(CMD_NORMAL_BRIGHTNESS_DISPLAY_ON);//set display on
+    
+	DChigh;
+}
+
+void analyzerInit()
+{
+    radioRegistersInit();
+
+    MCSM0 = 0x14;    // Auto-calibrate  when going from idle to RX or TX.
+    MCSM1 = 0x00;    // Disable CCA.  After RX, go to IDLE.  After TX, go to IDLE.
+    // We leave MCSM2 at its default value = 0x07
+    MDMCFG2 = 0x70;   //disable sync word detection
+    RFST = 4; //idle radio
+}
+
+uint16 averageChannel(uint8 first, uint8 last)
+{
+	uint8 i;
+	uint16 rssiChannelSum;
+	
+	rssiChannelSum = 0;
+	for (i = first; i < last + 1; i++)
+		rssiChannelSum += rssiValue[i] + 105;
+	return (uint16) (10 * rssiChannelSum / (last - first + 1));
+}
+
+void normalizedWiFi(void)
+{
+	uint8 i;
+	uint16 max = WiFi[2];
+    
+	for (i = 2; i < 12; i++)
+	{
+		if (WiFi[i] > max)
+			max = WiFi[i];
+	}
+	
+	for(i = 2; i < 12; i++)
+		WiFi[i] = (uint8) (20 * (max - WiFi[i]) / max);
+}
+
+void normalizedZigBee(void)
+{
+	uint8 i;
+	uint16 max = ZigBee[12];
+    
+	for (i = 12; i < 25; i++)
+	{
+		if (ZigBee[i] > max)
+			max = ZigBee[i];
+	}
+	
+	for(i = 12; i < 25; i++)
+		ZigBee[i] = (uint8) (20 * (max - ZigBee[i]) / max);
+}
+
+uint8 minWiFi(void)
+{
+	uint8 i;
+	uint8 minChannelWiFi = 2;
+	uint16 min = WiFi[2];
+    
+	for (i = 2; i < 12; i++)
+	{
+		if (WiFi[i] < min)
+		{
+			min = WiFi[i];
+            minChannelWiFi = i;
+        }
+	}
+	
+    return minChannelWiFi;
+}
+
+uint8 minZigBee(void)
+{
+	uint8 i;
+	uint8 minChannelZigBee = 12;
+	uint16 min = ZigBee[12];
+    
+	for (i = 12; i < 25; i++)
+	{
+		if (ZigBee[i] < min)
+        {
+			min = ZigBee[i];
+            minChannelZigBee = i;
+        }
+	}
+    
+    return minChannelZigBee;
+}
+
+void checkRadioChannels(void)
+{
+    uint16 i;
+    uint16 channel;
+	
+    LED_GREEN(1);
+	
+    for (channel = 0; channel < 256; channel++)
+	{
+        int32 rssiSum;
+
+        rssiValue[channel] = -115;
+
+        while(MARCSTATE != 1);  //radio should already be idle, but check anyway
+        CHANNR = channel;
+        RFST = 2;  // radio in RX mode and autocal
+        while(MARCSTATE != 13);  //wait for RX mode
+        rssiSum = 0;
+        for (i = 0; i < 100; i++)
+		{
+            if (TCON & 2) //radio byte available?
+			{
+                uint8 rfdata = RFD; // read byte
+                TCON &= ~2; //clear ready flag
+            }
+            rssiSum += radioRssi();
+        }
+        RFST = 4; //idle radio
+        rssiValue[channel] = (int16) (rssiSum / 100);
+		
+		// подготовка к выводу
+		
+		if (channel % 2 == 0) // even
+		{
+			rssiHalfValue[channel/2] = (int16) ((rssiValue[channel] + rssiValue[channel+1]) / 2);
+			
+			if (rssiHalfValue[channel/2] <= -105)
+			{
+				rssiHalfValue[channel/2] == 0x00;
+			}
+			else if (rssiHalfValue[channel/2] >= -53) // -42 place for grid
+			{
+				rssiHalfValue[channel/2] == 0xFF;
+			}
+			else
+			{
+				rssiHalfValue[channel/2] += 105;
+			}
+		}
+        
+        if (!isPinHigh(0) || !isPinHigh(12) || !isPinHigh(13))
+            pressButtoms();
+    }  // the above loop takes about 414 ms on average, so about 1.6 ms/channel
+    
+    WiFi[2] = averageChannel(10,84);
+	WiFi[3] = averageChannel(28,102);
+	WiFi[4] = averageChannel(45,119);
+	WiFi[5] = averageChannel(63,136);
+	WiFi[6] = averageChannel(80,154);
+	WiFi[7] = averageChannel(98,171);
+	WiFi[8] = averageChannel(115,189);
+	WiFi[9] = averageChannel(133,206);
+	WiFi[10] = averageChannel(150,224);
+	WiFi[11] = averageChannel(167,241);
+	
+	minWiFiChannel = minWiFi();
+    normalizedWiFi();
+    
+    ZigBee[12] = averageChannel(16,30);
+	ZigBee[13] = averageChannel(33,47);
+	ZigBee[14] = averageChannel(51,65);
+	ZigBee[15] = averageChannel(68,82);
+	ZigBee[16] = averageChannel(85,99);
+	ZigBee[17] = averageChannel(103,117);
+	ZigBee[18] = averageChannel(120,134);
+	ZigBee[19] = averageChannel(138,152);
+	ZigBee[20] = averageChannel(155,169);
+	ZigBee[21] = averageChannel(173,187);
+	ZigBee[22] = averageChannel(190,204);
+	ZigBee[23] = averageChannel(208,222);
+	ZigBee[24] = averageChannel(225,239);
+	
+	minZigBeeChannel = minZigBee();
+    normalizedZigBee();
+    
+    LED_GREEN(0);
+}
+
+
 void main()
 {
-	uint8 channel;
-    
 	systemInit();
     usbInit();
 	spiInit();
@@ -1154,48 +1147,7 @@ void main()
 			LED_RED(1);
 		}
         
-        if (!isPinHigh(12) && state != 2 && pause) // Measure voltage on P1_2
-		{
-            for (channel = 96; channel > 0; channel--)
-			{
-                rssiHalfValueMax[channel] = 0;
-                rssiValueMax = 0;
-                channelValueMax = 0;
-            }
-            
-            //clearWindow(0, 0, 95, 63);
-        }
-        
-        if (!isPinHigh(13) && pause) // Measure voltage on P1_3
-        {
-            if (state == 2)
-                state = 0;
-            else
-                state++;
-            
-            switch(state)
-            {
-            case 0:
-                clearWindow(0, 0, 95, 63);
-                drawGrid(colorGrid);
-                break;
-            case 1:
-                clearWindow(0, 54, 95, 63);
-                drawStatistics(colorGrid);
-                break;
-            case 2:
-                clearWindow(0, 0, 95, 63);
-                drawGridChannel(colorMax);
-                break;
-            }
-          
-            while(!isPinHigh(13));
-        }
-        
-        if (!isPinHigh(0)) // Measure voltage on P0_0
-        {
-            pause = !pause;
-            while(!isPinHigh(0));
-        }
+        if (!isPinHigh(0) || !isPinHigh(12) || !isPinHigh(13))
+            pressButtoms();
 	}
 }
