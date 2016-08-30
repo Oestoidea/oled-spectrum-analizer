@@ -35,13 +35,13 @@ class SerialPort(threading.Thread):
         self.ser.baudrate = 9600
         self.ser.bytesize = serial.EIGHTBITS
         self.ser.stopbits = serial.STOPBITS_ONE
-        self.ser.parity = serial.PARITY_NONE #set parity check: no parity
-        self.ser.timeout = 1            #non-block read
-        self.ser.xonxoff = False     #disable software flow control
-        self.ser.rtscts = False     #disable hardware (RTS/CTS) flow control
-        self.ser.dsrdtr = False       #disable hardware (DSR/DTR) flow control
+        self.ser.parity = serial.PARITY_NONE    #set parity check: no parity
+        self.ser.timeout = 1                    #non-block read
+        self.ser.xonxoff = False                #disable software flow control
+        self.ser.rtscts = False                 #disable hardware (RTS/CTS) flow control
+        self.ser.dsrdtr = False                 #disable hardware (DSR/DTR) flow control
     
-	def run(self):
+    def run(self):
         try:
             self.ser.open()
             if (self.ser.isOpen()):
@@ -53,7 +53,7 @@ class SerialPort(threading.Thread):
         if self.ser.isOpen():
             self.ser.flushInput()
             self.ser.flushOutput()
-			time.sleep(0.5)
+            time.sleep(0.5)
             numOfLines = 0
 
             while True:
