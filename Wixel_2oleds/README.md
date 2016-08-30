@@ -18,7 +18,7 @@ Put the firmware on Wixel with parameters __spi_on__ and __i2c_on__. For example
 C:\wixel-sdk>make load_Wixel_2oleds S="spi_on=1 i2c_on=1"
 ```
 
-More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b).
+More information about Wixel apps you can see on [official site](https://www.pololu.com/docs/0J46/10.b). This scanner based on [Spectrum Analyzer](https://github.com/pololu/wixel-sdk/tree/dev/david/analyzer/apps/spectrum_analyzer) written by David E. Grayson.
 
 ## Displays
 
