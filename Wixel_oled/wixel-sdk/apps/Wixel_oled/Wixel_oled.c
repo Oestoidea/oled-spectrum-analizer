@@ -30,37 +30,37 @@ static uint16 XDATA ZigBee[25] = {0}; // only 13 (12-24) from 16 (11-26)
 static uint16 XDATA WiFi[12] = {0}; // only 10 (2-11) from 14 (1-14)
 
 // 4-wire SPI
-#define RESlow		setDigitalOutput(1,0)	// P0_1 to RES
-#define REShigh		setDigitalOutput(1,1)
+#define RESlow      setDigitalOutput(1,0)   // P0_1 to RES
+#define REShigh     setDigitalOutput(1,1)
 
-#define DClow		setDigitalOutput(2,0)	// P0_2 to D/C (MISO)
-#define DChigh		setDigitalOutput(2,1)
-											// P0_3 to DIN (MOSI)
-#define CSlow		setDigitalOutput(4,0)	// P0_4 to CS (!CC)
-#define CShigh		setDigitalOutput(4,1)
-											// P0_5 to CLK
+#define DClow       setDigitalOutput(2,0)   // P0_2 to D/C (MISO)
+#define DChigh      setDigitalOutput(2,1)
+                                            // P0_3 to DIN (MOSI)
+#define CSlow       setDigitalOutput(4,0)   // P0_4 to CS (!CC)
+#define CShigh      setDigitalOutput(4,1)
+                                            // P0_5 to CLK
 void updateLeds(void)
 {
-	usbShowStatusWithGreenLed();
-	LED_GREEN(0);
-	LED_RED(0);
-	LED_YELLOW(0);
+    usbShowStatusWithGreenLed();
+    LED_GREEN(0);
+    LED_RED(0);
+    LED_YELLOW(0);
 }
 
 void sendCmd(uint8 c)
 {
     DClow;
-	CSlow;
-	spi0MasterSendByte(c);
-	CShigh;
+    CSlow;
+    spi0MasterSendByte(c);
+    CShigh;
 }
 
 void sendData(uint8 c)
 {
     DChigh;
-	CSlow;
-	spi0MasterSendByte(c);
-	CShigh;
+    CSlow;
+    spi0MasterSendByte(c);
+    CShigh;
 }
 
 void drawPixel(uint8 x, uint8 y, uint16 color)
@@ -130,70 +130,70 @@ void clearWindow(uint8 x0, uint8 y0, uint8 x1, uint8 y1)
 
 void drawNumber(uint8 x, uint8 y, uint8 number, BIT size, uint16 color)
 {
-	if (size)
-	{
-		switch(number)
-		{
-		case 0:
+    if (size)
+    {
+        switch(number)
+        {
+        case 0:
             drawLine(x + 1, y,     x + 3, y,     color);
             drawLine(x + 1, y + 6, x + 3, y + 6, color);
             drawLine(x,     y + 1, x,     y + 5, color);
             drawLine(x + 4, y + 1, x + 4, y + 5, color);
-			break;
-		case 1:
+            break;
+        case 1:
             drawLine(x,     y,     x + 2, y,     color);
             drawLine(x + 1, y + 1, x + 1, y + 6, color);
             drawPixel(x, y + 5, color);
-			break;
-		case 2:
-			drawLine(x,     y,     x + 4, y,     color);
+            break;
+        case 2:
+            drawLine(x,     y,     x + 4, y,     color);
             drawPixel(x + 1, y + 1, color);
             drawPixel(x + 2, y + 2, color);
             drawPixel(x + 3, y + 3, color);
             drawLine(x + 4, y + 4, x + 4, y + 5, color);
             drawLine(x + 1, y + 6, x + 3, y + 6, color);
             drawPixel(x, y + 5, color);
-			break;
-		case 3:
-			drawLine(x + 1, y,     x + 3, y,     color);
+            break;
+        case 3:
+            drawLine(x + 1, y,     x + 3, y,     color);
             drawPixel(x, y + 1, color);
-			drawLine(x + 4, y + 1, x + 4, y + 2, color);
+            drawLine(x + 4, y + 1, x + 4, y + 2, color);
             drawPixel(x + 3, y + 3, color);
             drawPixel(x + 2, y + 4, color);
             drawPixel(x + 3, y + 5, color);
             drawLine(x,     y + 6, x + 4, y + 6, color);
-			break;
-		case 4:
-			drawLine(x,     y + 2, x + 4, y + 2, color);
+            break;
+        case 4:
+            drawLine(x,     y + 2, x + 4, y + 2, color);
             drawLine(x + 3, y,     x + 3, y + 6, color);
             drawPixel(x, y + 3, color);
             drawPixel(x + 1, y + 4, color);
             drawPixel(x + 2, y + 5, color);
-			break;
+            break;
         case 5:
             drawLine(x + 1, y,     x + 3, y,     color);
             drawPixel(x, y + 1, color);
             drawLine(x + 4, y + 1, x + 4, y + 3, color);
             drawLine(x,     y + 4, x + 3, y + 4, color);
             drawPixel(x, y + 5, color);
-			drawLine(x,     y + 6, x + 4, y + 6, color);
-			break;
-		case 6:
+            drawLine(x,     y + 6, x + 4, y + 6, color);
+            break;
+        case 6:
             drawLine(x + 1, y,     x + 3, y,     color);
             drawLine(x + 1, y + 3, x + 3, y + 3, color);
             drawLine(x,     y + 1, x,     y + 4, color);
             drawLine(x + 4, y + 1, x + 4, y + 2, color);
             drawPixel(x + 1, y + 5, color);
             drawLine(x + 2, y + 6, x + 3, y + 6, color);
-			break;
-		case 7:
+            break;
+        case 7:
             drawLine(x + 1, y,     x + 1, y + 2, color);
             drawPixel(x + 2, y + 3, color);
             drawPixel(x + 3, y + 4, color);
             drawPixel(x + 4, y + 5, color);
             drawLine(x,     y + 6, x + 4, y + 6, color);
-			break;
-		case 8:
+            break;
+        case 8:
             drawLine(x + 1, y,     x + 3, y,     color);
             drawLine(x + 1, y + 3, x + 3, y + 3, color);
             drawLine(x + 1, y + 6, x + 3, y + 6, color);
@@ -201,8 +201,8 @@ void drawNumber(uint8 x, uint8 y, uint8 number, BIT size, uint16 color)
             drawLine(x,     y + 4, x,     y + 5, color);
             drawLine(x + 4, y + 1, x + 4, y + 2, color);
             drawLine(x + 4, y + 4, x + 4, y + 5, color);
-			break;
-		case 9:
+            break;
+        case 9:
             drawLine(x + 1, y,     x + 2, y,     color);
             drawPixel(x + 3, y + 1, color);
             drawLine(x + 4, y + 2, x + 4, y + 5, color);
@@ -210,75 +210,75 @@ void drawNumber(uint8 x, uint8 y, uint8 number, BIT size, uint16 color)
             drawLine(x + 1, y + 6, x + 3, y + 6, color);
             drawLine(x,     y + 4, x,     y + 5, color);
             break;
-		}
-	}
-	else
-	{
-		switch(number)
-		{
-		case 0:
+        }
+    }
+    else
+    {
+        switch(number)
+        {
+        case 0:
             drawLine(x,     y,     x,     y + 4, color);
             drawLine(x + 2, y,     x + 2, y + 4, color);
             drawPixel(x + 1, y, color);
             drawPixel(x + 1, y + 4, color);
-			break;
-		case 1:
+            break;
+        case 1:
             drawLine(x + 1, y,     x + 1, y + 4, color);
             drawPixel(x, y + 4, color);
-			break;
-		case 2:
+            break;
+        case 2:
             drawLine(x,     y,     x + 2, y,     color);
             drawLine(x,     y + 2, x + 2, y + 2, color);
             drawLine(x,     y + 4, x + 2, y + 4, color);
             drawPixel(x, y + 1, color);
             drawPixel(x + 2, y + 3, color);
-			break;
-		case 3:
+            break;
+        case 3:
             drawLine(x + 2, y,     x + 2, y + 4, color);
             drawLine(x,     y,     x + 1, y,     color);
             drawPixel(x + 1, y + 2, color);
             drawLine(x,     y + 4, x + 1, y + 4, color);
-			break;
-		case 4:
+            break;
+        case 4:
             drawLine(x,     y + 2, x,     y + 4, color);
             drawLine(x + 2, y,     x + 2, y + 4, color);
             drawPixel(x + 1, y + 2, color);
-			break;
-		case 5:
+            break;
+        case 5:
             drawLine(x,     y,     x + 2, y,     color);
             drawLine(x,     y + 2, x + 2, y + 2, color);
             drawLine(x,     y + 4, x + 2, y + 4, color);
             drawPixel(x, y + 3, color);
             drawPixel(x + 2, y + 1, color);
-			break;
-		case 6:
+            break;
+        case 6:
             drawLine(x,     y,     x,     y + 4, color);
             drawLine(x + 2, y,     x + 2, y + 2, color);
             drawPixel(x + 1, y, color);
             drawPixel(x + 1, y + 2, color);
-			break;
-		case 7:
+            break;
+        case 7:
             drawLine(x + 2, y,     x + 2, y + 4, color);
             drawLine(x,     y + 4, x + 1, y + 4, color);
-			break;
-		case 8:
+            break;
+        case 8:
             drawLine(x,     y,     x,     y + 4, color);
             drawLine(x + 2, y,     x + 2, y + 4, color);
             drawPixel(x + 1, y, color);
             drawPixel(x + 1, y + 2, color);
             drawPixel(x + 1, y + 4, color);
-			break;
-		case 9:
+            break;
+        case 9:
             drawLine(x,     y + 2, x,     y + 4, color);
             drawLine(x + 2, y,     x + 2, y + 4, color);
             drawPixel(x + 1, y + 2, color);
             drawPixel(x + 1, y + 4, color);
-			break;
-		case 10:  // "-"
+            break;
+        case 10:  // "-"
             drawLine(x,     y + 2, x + 2, y + 2, color);
-			break;
-		}
-	}
+            break;
+        }
+    }
 }
 
 void drawGrid(uint16 color)
@@ -730,34 +730,34 @@ void drawBarchart(uint16 color)
     uint16 colorOff = COLOR_BLACK;
     
     for (i = 12; i < 25; i++)
-	{
-		xStartDelta = xStart + 6 * (i - 12);
+    {
+        xStartDelta = xStart + 6 * (i - 12);
         drawFrame(xStartDelta, yStart, xStartDelta + 4, yStart + 23, colorOff, colorOff);
         drawFrame(xStartDelta, yStart, xStartDelta + 4, yStart + ZigBee[i], color, color);
         drawPixel(xStartDelta, yStart + ZigBee[i], colorOff);
         drawPixel(xStartDelta + 4, yStart + ZigBee[i], colorOff);
-	}
+    }
     
     xStart = 15;
     yStart = 8;
     
     for (i = 2; i < 12; i++)
-	{
-		xStartDelta = xStart + 7 * (i - 2);
+    {
+        xStartDelta = xStart + 7 * (i - 2);
         drawFrame(xStartDelta, yStart, xStartDelta + 4, yStart + 23, colorOff, colorOff);
         drawFrame(xStartDelta, yStart, xStartDelta + 4, yStart + WiFi[i], color, color);
         drawPixel(xStartDelta, yStart + WiFi[i], colorOff);
         drawPixel(xStartDelta + 4, yStart + WiFi[i], colorOff);
-	}
+    }
 }
 
 void drawBarchartCurrentMax(void)
 {
     uint8 channel;
     uint8 rssiValueMaxTemp;
-	uint8 rssiValueMax1;
-	uint8 rssiValueMax0;
-	uint8 channelValueMaxTemp;
+    uint8 rssiValueMax1;
+    uint8 rssiValueMax0;
+    uint8 channelValueMaxTemp;
     
     drawLine(95, 0, 95, 54, COLOR_BLACK);
     
@@ -862,18 +862,18 @@ void pressButtoms(void)
 
 void spiInit(void)
 {
-	spi0MasterInit();
-	spi0MasterSetFrequency(3000000);
-	spi0MasterSetClockPolarity(SPI_POLARITY_IDLE_LOW);		// Sets the clock polarity CPOL = 0 (SPI_POLARITY_IDLE_HIGH)
-	spi0MasterSetClockPhase(SPI_PHASE_EDGE_LEADING);		// Sets the clock phase CPHA = 0 (SPI_PHASE_EDGE_TRAILING)
-	spi0MasterSetBitOrder(SPI_BIT_ORDER_MSB_FIRST);			// The most-significant bit is transmitted first	
+    spi0MasterInit();
+    spi0MasterSetFrequency(3000000);
+    spi0MasterSetClockPolarity(SPI_POLARITY_IDLE_LOW);  // Sets the clock polarity CPOL = 0 (SPI_POLARITY_IDLE_HIGH)
+    spi0MasterSetClockPhase(SPI_PHASE_EDGE_LEADING);    // Sets the clock phase CPHA = 0 (SPI_PHASE_EDGE_TRAILING)
+    spi0MasterSetBitOrder(SPI_BIT_ORDER_MSB_FIRST);     // The most-significant bit is transmitted first
 }
 
 void oledSpiInit(void)
 {
     RESlow;
     delayMicroseconds(3);
-	REShigh;
+    REShigh;
     delayMicroseconds(3);
    
     sendCmd(CMD_DISPLAY_OFF);          //Display Off
@@ -917,7 +917,7 @@ void oledSpiInit(void)
     sendCmd(CMD_DEACTIVE_SCROLLING);   //disable scrolling
     sendCmd(CMD_NORMAL_BRIGHTNESS_DISPLAY_ON);//set display on
     
-	DChigh;
+    DChigh;
 }
 
 void analyzerInit()
@@ -933,77 +933,73 @@ void analyzerInit()
 
 uint16 averageChannel(uint8 first, uint8 last)
 {
-	uint8 i;
-	uint16 rssiChannelSum;
-	
-	rssiChannelSum = 0;
-	for (i = first; i < last + 1; i++)
-		rssiChannelSum += rssiValue[i] + 105;
-	return (uint16) (10 * rssiChannelSum / (last - first + 1));
+    uint8 i;
+    uint16 rssiChannelSum;
+    
+    rssiChannelSum = 0;
+    for (i = first; i < last + 1; i++)
+        rssiChannelSum += rssiValue[i] + 105;
+    return (uint16) (10 * rssiChannelSum / (last - first + 1));
 }
 
 void normalizedWiFi(void)
 {
-	uint8 i;
-	uint16 max = WiFi[2];
+    uint8 i;
+    uint16 max = WiFi[2];
     
-	for (i = 2; i < 12; i++)
-	{
-		if (WiFi[i] > max)
-			max = WiFi[i];
-	}
-	
-	for(i = 2; i < 12; i++)
-		WiFi[i] = (uint8) (20 * (max - WiFi[i]) / max);
+    for (i = 2; i < 12; i++)
+        if (WiFi[i] > max)
+            max = WiFi[i];
+    
+    for(i = 2; i < 12; i++)
+        WiFi[i] = (uint8) (20 * (max - WiFi[i]) / max);
 }
 
 void normalizedZigBee(void)
 {
-	uint8 i;
-	uint16 max = ZigBee[12];
+    uint8 i;
+    uint16 max = ZigBee[12];
     
-	for (i = 12; i < 25; i++)
-	{
-		if (ZigBee[i] > max)
-			max = ZigBee[i];
-	}
-	
-	for(i = 12; i < 25; i++)
-		ZigBee[i] = (uint8) (20 * (max - ZigBee[i]) / max);
+    for (i = 12; i < 25; i++)
+        if (ZigBee[i] > max)
+            max = ZigBee[i];
+    
+    for(i = 12; i < 25; i++)
+        ZigBee[i] = (uint8) (20 * (max - ZigBee[i]) / max);
 }
 
 uint8 minWiFi(void)
 {
-	uint8 i;
-	uint8 minChannelWiFi = 2;
-	uint16 min = WiFi[2];
+    uint8 i;
+    uint8 minChannelWiFi = 2;
+    uint16 min = WiFi[2];
     
-	for (i = 2; i < 12; i++)
-	{
-		if (WiFi[i] < min)
-		{
-			min = WiFi[i];
+    for (i = 2; i < 12; i++)
+    {
+        if (WiFi[i] < min)
+        {
+            min = WiFi[i];
             minChannelWiFi = i;
         }
-	}
-	
+    }
+    
     return minChannelWiFi;
 }
 
 uint8 minZigBee(void)
 {
-	uint8 i;
-	uint8 minChannelZigBee = 12;
-	uint16 min = ZigBee[12];
+    uint8 i;
+    uint8 minChannelZigBee = 12;
+    uint16 min = ZigBee[12];
     
-	for (i = 12; i < 25; i++)
-	{
-		if (ZigBee[i] < min)
+    for (i = 12; i < 25; i++)
+    {
+        if (ZigBee[i] < min)
         {
-			min = ZigBee[i];
+            min = ZigBee[i];
             minChannelZigBee = i;
         }
-	}
+    }
     
     return minChannelZigBee;
 }
@@ -1012,11 +1008,11 @@ void checkRadioChannels(void)
 {
     uint16 i;
     uint16 channel;
-	
+    
     LED_GREEN(1);
-	
+    
     for (channel = 0; channel < 256; channel++)
-	{
+    {
         int32 rssiSum;
 
         rssiValue[channel] = -115;
@@ -1027,9 +1023,9 @@ void checkRadioChannels(void)
         while(MARCSTATE != 13);  //wait for RX mode
         rssiSum = 0;
         for (i = 0; i < 100; i++)
-		{
+        {
             if (TCON & 2) //radio byte available?
-			{
+            {
                 uint8 rfdata = RFD; // read byte
                 TCON &= ~2; //clear ready flag
             }
@@ -1037,60 +1033,60 @@ void checkRadioChannels(void)
         }
         RFST = 4; //idle radio
         rssiValue[channel] = (int16) (rssiSum / 100);
-		
-		// подготовка к выводу
-		
-		if (channel % 2 == 0) // even
-		{
-			rssiHalfValue[channel/2] = (int16) ((rssiValue[channel] + rssiValue[channel+1]) / 2);
-			
-			if (rssiHalfValue[channel/2] <= -105)
-			{
-				rssiHalfValue[channel/2] == 0x00;
-			}
-			else if (rssiHalfValue[channel/2] >= -53) // -42 place for grid
-			{
-				rssiHalfValue[channel/2] == 0xFF;
-			}
-			else
-			{
-				rssiHalfValue[channel/2] += 105;
-			}
-		}
+        
+        // подготовка к выводу
+        
+        if (channel % 2 == 0) // even
+        {
+            rssiHalfValue[channel/2] = (int16) ((rssiValue[channel] + rssiValue[channel+1]) / 2);
+            
+            if (rssiHalfValue[channel/2] <= -105)
+            {
+                rssiHalfValue[channel/2] == 0x00;
+            }
+            else if (rssiHalfValue[channel/2] >= -53) // -42 place for grid
+            {
+                rssiHalfValue[channel/2] == 0xFF;
+            }
+            else
+            {
+                rssiHalfValue[channel/2] += 105;
+            }
+        }
         
         if (!isPinHigh(0) || !isPinHigh(12) || !isPinHigh(13))
             pressButtoms();
     }  // the above loop takes about 414 ms on average, so about 1.6 ms/channel
     
     WiFi[2] = averageChannel(10,84);
-	WiFi[3] = averageChannel(28,102);
-	WiFi[4] = averageChannel(45,119);
-	WiFi[5] = averageChannel(63,136);
-	WiFi[6] = averageChannel(80,154);
-	WiFi[7] = averageChannel(98,171);
-	WiFi[8] = averageChannel(115,189);
-	WiFi[9] = averageChannel(133,206);
-	WiFi[10] = averageChannel(150,224);
-	WiFi[11] = averageChannel(167,241);
-	
-	minWiFiChannel = minWiFi();
+    WiFi[3] = averageChannel(28,102);
+    WiFi[4] = averageChannel(45,119);
+    WiFi[5] = averageChannel(63,136);
+    WiFi[6] = averageChannel(80,154);
+    WiFi[7] = averageChannel(98,171);
+    WiFi[8] = averageChannel(115,189);
+    WiFi[9] = averageChannel(133,206);
+    WiFi[10] = averageChannel(150,224);
+    WiFi[11] = averageChannel(167,241);
+    
+    minWiFiChannel = minWiFi();
     normalizedWiFi();
     
     ZigBee[12] = averageChannel(16,30);
-	ZigBee[13] = averageChannel(33,47);
-	ZigBee[14] = averageChannel(51,65);
-	ZigBee[15] = averageChannel(68,82);
-	ZigBee[16] = averageChannel(85,99);
-	ZigBee[17] = averageChannel(103,117);
-	ZigBee[18] = averageChannel(120,134);
-	ZigBee[19] = averageChannel(138,152);
-	ZigBee[20] = averageChannel(155,169);
-	ZigBee[21] = averageChannel(173,187);
-	ZigBee[22] = averageChannel(190,204);
-	ZigBee[23] = averageChannel(208,222);
-	ZigBee[24] = averageChannel(225,239);
-	
-	minZigBeeChannel = minZigBee();
+    ZigBee[13] = averageChannel(33,47);
+    ZigBee[14] = averageChannel(51,65);
+    ZigBee[15] = averageChannel(68,82);
+    ZigBee[16] = averageChannel(85,99);
+    ZigBee[17] = averageChannel(103,117);
+    ZigBee[18] = averageChannel(120,134);
+    ZigBee[19] = averageChannel(138,152);
+    ZigBee[20] = averageChannel(155,169);
+    ZigBee[21] = averageChannel(173,187);
+    ZigBee[22] = averageChannel(190,204);
+    ZigBee[23] = averageChannel(208,222);
+    ZigBee[24] = averageChannel(225,239);
+    
+    minZigBeeChannel = minZigBee();
     normalizedZigBee();
     
     LED_GREEN(0);
@@ -1099,31 +1095,31 @@ void checkRadioChannels(void)
 
 void main()
 {
-	systemInit();
+    systemInit();
     usbInit();
-	spiInit();
+    spiInit();
     delayMicroseconds(100);
     oledSpiInit();
-	analyzerInit();
+    analyzerInit();
     
     clearWindow(0, 0, 95, 63);
-	drawLogo(26, 15, COLOR_WHITE);
+    drawLogo(26, 15, COLOR_WHITE);
     checkRadioChannels();
     delayMs(2000);
     clearWindow(0, 0, 95, 63);
     drawGrid(colorGrid);
 
     while(1)
-	{
-		boardService();
+    {
+        boardService();
         
         rssiValueMaxCurrent = 0;
-		
-		if (pause) // Measure voltage on P0_0
-		{
-			updateLeds();
+        
+        if (pause) // Measure voltage on P0_0
+        {
+            updateLeds();
             
-			checkRadioChannels();
+            checkRadioChannels();
             
             LED_YELLOW(1);
             switch(state)
@@ -1141,13 +1137,13 @@ void main()
                 break;
             }
             LED_YELLOW(0);
-		}
-		else
-		{
-			LED_RED(1);
-		}
+        }
+        else
+        {
+            LED_RED(1);
+        }
         
         if (!isPinHigh(0) || !isPinHigh(12) || !isPinHigh(13))
             pressButtoms();
-	}
+    }
 }
