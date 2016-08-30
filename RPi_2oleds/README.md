@@ -32,6 +32,8 @@ Put the firmware on Wixel:
 sudo ./wixelcmd write RPi_2oleds.wxl -a
 ```
 
+This scanner based on [Spectrum Analyzer](https://github.com/pololu/wixel-sdk/tree/dev/david/analyzer/apps/spectrum_analyzer) written by David E. Grayson.
+
 ## Displays
 
 Connect OLED's to Raspberry Pi as shown on the picture.
