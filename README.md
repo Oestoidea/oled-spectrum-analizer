@@ -24,4 +24,4 @@ Vladimir Sokolov aka Oestoidea
 
 # License
 
-MIT
+[MIT](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/LICENSE.md)
