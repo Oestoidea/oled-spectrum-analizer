@@ -54,3 +54,9 @@ Connect OLED's to Wixel as shown on the picture.
 | -------- |:-------------:|
 | VIN      | 2.7–6.5V      |
 | GND      | GND           |
+
+## Implementation
+
+Wixel, OLED, and external antenna in the housing is shown below.
+
+![Wixel_2oleds_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds4.png)
