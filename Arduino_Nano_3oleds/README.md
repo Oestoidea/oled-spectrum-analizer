@@ -74,3 +74,9 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 ## Problems
 
 Arduino Nano does not have enough memory, because it was not possible to realize the display (I2C) of available channels. The project requires further optimization.
+
+## Implementation
+
+Prototype is assembled in a clear acrylic case for Rasberry Pi, but can be built more compactly. Button with a red cap — pause.
+
+![Arduino_Nano_3oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano_3oleds/pics/Arduino_Nano_3oleds2.png)
