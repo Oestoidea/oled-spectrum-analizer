@@ -69,4 +69,8 @@ Connect OLED's to Wixel as shown on the picture.
 
 Prototype is assembled in a clear acrylic case for Rasberry Pi, but can be built more compactly. Button with a red cap — switch on, and the second one — pause.
 
-![Wixel_3oleds_photo2](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_3oleds/pics/Wixel_3oleds.png)
+![Wixel_3oleds_photo2](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_3oleds/pics/Wixel_3oleds2.png)
+
+![Wixel_3oleds_photo2](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_3oleds/pics/Wixel_3oleds3.png)
+
+![Wixel_3oleds_photo2](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_3oleds/pics/Wixel_3oleds4.png)
