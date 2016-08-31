@@ -57,6 +57,10 @@ Connect OLED's to Wixel as shown on the picture.
 
 ## Implementation
 
-Wixel, OLED, and external antenna in the housing is shown below.
+Wixel, OLED, and external antenna in the housing is shown below. Button on the left size — switch on, and on the right — pause.
 
 ![Wixel_2oleds_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds4.png)
+
+![Wixel_2oleds_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds5.png)
+
+![Wixel_2oleds_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds6.png)
