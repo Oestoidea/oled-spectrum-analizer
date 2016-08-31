@@ -7,7 +7,7 @@ Spectrum analyzer on Pololu Wixel with SPI OLED's SSD1331. This scheme takes les
 1. Pololu Wixel
 2. OLED 0.95" 96×64 SPI SSD1331
 
-[![Wixel_oled_video](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/pics/Wixel_oled-video.png)](https://www.youtube.com/watch?v=7rlPyKthjLw "Spectrum Analyzer 2.4 GHz on Wixel with OLED SSD1331")
+[![Wixel_oled_video](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/pics/Wixel_oled_video.png)](https://www.youtube.com/watch?v=7rlPyKthjLw "Spectrum Analyzer 2.4 GHz on Wixel with OLED SSD1331")
 
 ## Wixel
 
