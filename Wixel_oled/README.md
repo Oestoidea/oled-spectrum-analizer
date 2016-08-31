@@ -7,7 +7,7 @@ Spectrum analyzer on Pololu Wixel with SPI OLED's SSD1331. This scheme takes les
 1. Pololu Wixel
 2. OLED 0.95" 96×64 SPI SSD1331
 
-![Wixel_oled_photo]()
+[![Wixel_oled_video](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/pics/Wixel_oled-video.png)](https://www.youtube.com/watch?v=7rlPyKthjLw "Spectrum Analyzer 2.4 GHz on Wixel with OLED SSD1331")
 
 ## Wixel
 
@@ -60,3 +60,23 @@ Buttom __Pause__ stops processes. Buttom __Reset__ puts maximum graph. Buttom __
 | -------- |:-------------:|
 | VIN      | 2.7–6.5V      |
 | GND      | GND           |
+
+## Implementation
+
+Prototype is assembled on the breadboard. The right button on this example — reset, the middle button — mode switching, and the left button — pause.
+
+Start screen with the logo appears at reboot.
+
+![Wixel_oled_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/pics/Wixel_oled.png)
+
+The first mode with the current and the maximum spectrum curves and values at the maximum points.
+
+![Wixel_oled_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/pics/Wixel_oled2.png)
+
+The second mode is different information about the free channels instead of the frequency scale.
+
+![Wixel_oled_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/pics/Wixel_oled3.png)
+
+The last mode displays ZigBee and Wi-Fi channels (not all channels fall within the available range). The higher the channel in the histogram, the more free.
+
+![Wixel_oled_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_oled/pics/Wixel_oled4.png)
