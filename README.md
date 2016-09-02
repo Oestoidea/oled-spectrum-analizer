@@ -24,4 +24,4 @@ Vladimir Sokolov aka Oestoidea
 
 # License
 
-[MIT](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/LICENSE.md)
+[GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
