@@ -5,7 +5,7 @@
 #include <spi0_master.h>
 #include <i2c.h>
 #include <radio_registers.h>
-#include <ssd1331.h>
+#include "ssd1331.h"
 
 static int16 XDATA rssiValue[256];
 static int16 XDATA rssiHalfValue[128];
