@@ -1,4 +1,4 @@
-This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's.
+This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's on Wixel, Arduino Nano or Raspberry Pi.
 
 # Structure
 
@@ -24,4 +24,4 @@ Vladimir Sokolov aka Oestoidea
 
 # License
 
-MIT
+[GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
