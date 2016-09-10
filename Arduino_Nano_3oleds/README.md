@@ -67,7 +67,7 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | GND          | normally open |
 
 | Arduino Nano | power supply  |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | 5V           | 5V            |
 | GND          | GND           |
 
