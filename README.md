@@ -9,6 +9,7 @@ This project helps to biuld spectrum analyzer on different modules. It contains 
 * [Wixel_3oleds](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel_3oleds) — _Pololu Wixel_ with SPI and I2C _OLED's SSD1306_
 * [Wixel_oled](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel_oled) — _Pololu Wixel_ with SPI _OLED SSD1331_
 * [Arduino_Nano_3oleds](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano_3oleds) — _Arduino Nano v3_ and _TI CC2500+PA+LNA_ with SPI and I2C _OLED's SSD1306_
+* [ESP8266_oled](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266_oled) — _ESP8266-1_ with I2C _OLED's SSD1306_
 
 Also you can find additional parts for Fritsing used in this project schemes:
 
@@ -17,6 +18,7 @@ Also you can find additional parts for Fritsing used in this project schemes:
 * [OLED 0.96" 128×64 I2C SSD1306](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)
 * [OLED 0.95" 96×64 SPI SSD1331](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz)
 * [CC2500+PA+LNA](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/CC2500%2BPA%2BLNA.fzpz)
+* [ESP8266-1](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/ESP8266-1.fzpz)
 
 # Author
 
