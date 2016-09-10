@@ -4,8 +4,8 @@ Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. The spectral spectral widt
 
 ## Equipment
 
-1. ESP8266 (ESP-01)
-2. OLED 0.96" 128×64 I2C SSD1306
+1. ESP8266 ([ESP-01 fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/ESP8266-1.fzpz))
+2. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
 3. AMS1117 module (or LM1117)
 
 ![ESP8266_oled_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266_oled/pics/ESP8266_oled.png)
