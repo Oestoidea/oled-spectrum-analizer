@@ -1,4 +1,4 @@
-This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's on Wixel, Arduino Nano or Raspberry Pi.
+This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's on Wixel, Arduino Nano, ESP8266 or Raspberry Pi.
 
 # Structure
 
