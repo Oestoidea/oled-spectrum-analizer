@@ -24,7 +24,7 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 ## Connection map
 
 | Arduino Nano | CC2500        |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | D10          | CSN           |
 | D11          | SI            |
 | D12          | SO            |
@@ -35,7 +35,7 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | GND          | GND           |
 
 | Arduino Nano | SPI0 OLED     |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | D9           | CS            |
 | D7           | D/C           |
 | D6           | DIN (SDA)     |
@@ -45,7 +45,7 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | GND          | GND           |
 
 | Arduino Nano | SPI1 OLED     |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | D8           | CS            |
 | D7           | D/C           |
 | D6           | DIN (SDA)     |
@@ -55,14 +55,14 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | GND          | GND           |
 
 | Arduino Nano | I2C OLED      |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | A5 (19)      | SCK           |
 | A4 (18)      | SDA           |
 | 3V3          | VCC           |
 | GND          | GND           |
 
 | Arduino Nano | switch        |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | A3 (17)      | normally open |
 | GND          | normally open |
 
