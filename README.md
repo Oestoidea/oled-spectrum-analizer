@@ -15,6 +15,15 @@ And another subprojects:
 * [ESP8266_oled_spectrum_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306) — _ESP8266-1_ with I2C _OLED's SSD1306_
 * [ESP8266_oled_list_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306) — _ESP8266-1_ with I2C _OLED's SSD1306_
 
+# Projects Comparison Table
+
+| Equipment    | OLED    | OLED size and        | Spectrum | Channel | AP   | Link |
+|              | type    | сonnection interface |          | diagram | list |      |
+| ------------ | ------- | -------------------- | -------- | ------- | ---- | ---- |
+| Wixel        | SSD1306 | 128×64 (SPI, I2C), 128×32 (I2C) | ✔ | ✔ | ✔ |  [Wixel_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) |
+
+# Fritzing Parts
+
 Also you can find additional parts for [Fritzing](http://fritzing.org/home/) used in this project schemes:
 
 * [Pololu Wixel](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz) 
