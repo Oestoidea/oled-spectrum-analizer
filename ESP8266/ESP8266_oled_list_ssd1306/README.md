@@ -12,13 +12,13 @@ Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. The spectral spectral widt
 
 ## Display
 
-Connect OLED to ESP8266 as shown on the picture.
+Connect OLED to ESP8266 as shown on the picture (on example with 0.91" 128×32 I2C OLED).
 
 ![ESP8266_oled_list_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_list_ssd1306/fritzing-scheme/ESP8266_oled_list_ssd1306_bb.png)
 
 ## ESP8266
 
-Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) libraries in Arduino EDI. This scanner based on standart WiFiScan from SDK and [ESP8266-I2C-OLED](https://github.com/costonisp/ESP8266-I2C-OLED) written by costonisp.
+Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) libraries in Arduino EDI. This scanner based on [ESP8266-I2C-OLED](https://github.com/costonisp/ESP8266-I2C-OLED) written by costonisp.
 
 ## Connection map
 
