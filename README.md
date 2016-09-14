@@ -17,9 +17,9 @@ And another subprojects:
 
 # Projects Comparison Table
 
-| Equipment    | OLED    | OLED size and        | Spectrum | Channel | AP   | Link |
-| ------------ | ------- | -------------------- | -------- | ------- | ---- | ---- |
-| Wixel        | SSD1306 | 128×64 (SPI, I2C), 128×32 (I2C) | ✔ | ✔ | ✔ |  [Wixel_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) |
+| Equipment    | OLED Chip | OLED Size and Interface | Spectrum | Channels | AP | Link |
+| ------------ | --------- | ----------------------- |:--------:|:--------:|:--:| ---- |
+| Wixel        | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) | ✔ | ✔ | ✔ |  [Wixel_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) |
 
 # Fritzing Parts
 
