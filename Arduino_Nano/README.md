@@ -5,9 +5,9 @@ Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED'
 ## Equipment
 
 1. Arduino Nano v3.0 (with 3.3V)
-2. TI CC2500+PA+LNA module with external antenna
-3. OLED 0.96" 128×64 I2C SSD1306
-4. Two OLED`s 0.96" 128×64 SPI SSD1306
+2. TI CC2500+PA+LNA module with external antenna ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/CC2500%2BPA%2BLNA.fzpz))
+3. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+4. Two OLED`s 0.96" 128×64 SPI SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
 
 ![Arduino_Nano_3oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano_3oleds/pics/Arduino_Nano_3oleds.png)
 
@@ -24,7 +24,7 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 ## Connection map
 
 | Arduino Nano | CC2500        |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | D10          | CSN           |
 | D11          | SI            |
 | D12          | SO            |
@@ -35,7 +35,7 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | GND          | GND           |
 
 | Arduino Nano | SPI0 OLED     |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | D9           | CS            |
 | D7           | D/C           |
 | D6           | DIN (SDA)     |
@@ -45,7 +45,7 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | GND          | GND           |
 
 | Arduino Nano | SPI1 OLED     |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | D8           | CS            |
 | D7           | D/C           |
 | D6           | DIN (SDA)     |
@@ -55,14 +55,14 @@ Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Ad
 | GND          | GND           |
 
 | Arduino Nano | I2C OLED      |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | A5 (19)      | SCK           |
 | A4 (18)      | SDA           |
 | 3V3          | VCC           |
 | GND          | GND           |
 
 | Arduino Nano | switch        |
-| ------------ |:-------------:|
+| ------------ | ------------- |
 | A3 (17)      | normally open |
 | GND          | normally open |
 
