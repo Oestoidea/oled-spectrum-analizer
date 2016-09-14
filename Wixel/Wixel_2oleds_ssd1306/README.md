@@ -1,4 +1,4 @@
-# Wixel_2oleds
+# Wixel_2oleds_ssd1306
 
 Spectrum analyzer on Pololu Wixel with SPI and/or I2C OLED's SSD1306. This scheme takes less then 10mA (on 5V).
 
@@ -8,7 +8,7 @@ Spectrum analyzer on Pololu Wixel with SPI and/or I2C OLED's SSD1306. This schem
 2. OLED 0.96" 128×64 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
 3. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
 
-![Wixel_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds.png)
+![Wixel_2oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306.png)
 
 ## Wixel
 
@@ -24,7 +24,7 @@ More information about Wixel apps you can see on [official site](https://www.pol
 
 Connect OLED's to Wixel as shown on the picture.
 
-![Wixel_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/fritzing-scheme/Wixel_2oleds_bb.png)
+![Wixel_2oleds_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/fritzing-scheme/Wixel_2oleds_ssd1306_bb.png)
 
 ## Connection map
 
@@ -59,8 +59,8 @@ Connect OLED's to Wixel as shown on the picture.
 
 Wixel, OLED, and external antenna in the housing is shown below. Button on the left size — switch on, and on the right — pause.
 
-![Wixel_2oleds_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds4.png)
+![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_4.png)
 
-![Wixel_2oleds_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds5.png)
+![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_5.png)
 
-![Wixel_2oleds_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel_2oleds/pics/Wixel_2oleds6.png)
+![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_6.png)
