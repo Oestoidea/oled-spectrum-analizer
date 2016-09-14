@@ -50,7 +50,7 @@ sudo python3 RPi_2oleds_ssd1306.py
 
 _If you have only I2C or SPI display just comment lines with missing connection._
 
-## Connection map
+## Connection Map
 
 | RPi         | SPI OLED      |
 | ----------- | ------------- |
