@@ -4,7 +4,7 @@ This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's 
 
 This project helps to biuld spectrum analyzer on different modules. It contains next Wixel subprojects:
 
-* [_Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) — 
+* [_Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306)
 * [_Pololu Wixel_ with SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306)
 * [_Pololu Wixel_ with SPI _OLED SSD1331_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331)
 
@@ -20,10 +20,10 @@ And another subprojects:
 | Equipment    | OLED Chip | OLED Size and Interface | Spectrum | Channels | APs |      |
 | ------------ | --------- | ----------------------- |:--------:|:--------:|:---:| ---- |
 | Wixel        | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) | ✔ |  |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) |
-| Wixel        | SSD1306   | 128×64 (SPI, I2C) | ✔ | ✔ |  | [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306) |
+| Wixel        | SSD1306   | 128×64 (2×SPI, I2C) | ✔ | ✔ |  | [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306) |
 | Wixel        | SSD1331   | 96×64 (SPI) | ✔ | ✔ |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331) |
 | Raspberry Pi 3, Wixel | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi) |
-| Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano) |
+| Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | 128×64 (2×SPI, I2C) | ✔ |  |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano) |
 | ESP8266-1 | SSD1306   | 128×64 (SPI, I2C) |  | ✔ |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306) |
 | ESP8266-1 | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) |  |  | ✔ | [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306) |
 
