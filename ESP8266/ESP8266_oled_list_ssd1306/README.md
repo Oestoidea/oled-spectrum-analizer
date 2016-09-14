@@ -20,7 +20,7 @@ Connect OLED to ESP8266 as shown on the picture (on example with 0.91" 128×32 I
 
 Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) libraries in Arduino EDI. This scanner based on [ESP8266-I2C-OLED](https://github.com/costonisp/ESP8266-I2C-OLED) written by costonisp.
 
-## Connection map
+## Connection Map
 
 | ESP8266-1    | OLED          |
 | ------------ | ------------- |
