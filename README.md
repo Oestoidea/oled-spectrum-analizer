@@ -4,27 +4,27 @@ This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's 
 
 This project helps to biuld spectrum analyzer on different modules. It contains next Wixel subprojects:
 
-* [Wixel_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) — _Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_
-* [Wixel_3oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306) — _Pololu Wixel_ with SPI and I2C _OLED's SSD1306_
-* [Wixel_oled_ssd1331](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331) — _Pololu Wixel_ with SPI _OLED SSD1331_
+* [_Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) — 
+* [_Pololu Wixel_ with SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306)
+* [_Pololu Wixel_ with SPI _OLED SSD1331_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331)
 
 And another subprojects:
 
-* [RPi_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi) — _Raspberry Pi 3_ and _Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_ 
-* [Arduino_Nano_3oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano) — _Arduino Nano v3_ and _TI CC2500+PA+LNA_ with SPI and I2C _OLED's SSD1306_
-* [ESP8266_oled_spectrum_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306) — _ESP8266-1_ with I2C _OLED's SSD1306_
-* [_ESP8266-1_ with I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306) (ESP8266_oled_list_ssd1306)
+* [_Raspberry Pi 3_ and _Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi)
+* [_Arduino Nano v3_ and _TI CC2500+PA+LNA_ with SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano)
+* [_ESP8266-1_ with I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306)
+* [_ESP8266-1_ with I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306)
 
 # Projects Comparison Table
 
-| Equipment    | OLED Chip | OLED Size and Interface | Spectrum | Channels | APs | Link |
+| Equipment    | OLED Chip | OLED Size and Interface | Spectrum | Channels | APs |      |
 | ------------ | --------- | ----------------------- |:--------:|:--------:|:---:| ---- |
-| Wixel        | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) | ✔ |  |  |  [Wixel_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) |
-| Wixel        | SSD1306   | 128×64 (SPI, I2C) | ✔ | ✔ |  | [Wixel_3oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306) |
-| Wixel        | SSD1331   | 96×64 (SPI) | ✔ | ✔ |  |  [Wixel_oled_ssd1331](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331) |
-| Raspberry Pi 3, Wixel | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [RPi_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi) |
-| Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [Arduino_Nano_3oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano) |
-| ESP8266-1 | SSD1306   | 128×64 (SPI, I2C) |  | ✔ |  |  [ESP8266_oled_spectrum_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306) |
+| Wixel        | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) | ✔ |  |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306) |
+| Wixel        | SSD1306   | 128×64 (SPI, I2C) | ✔ | ✔ |  | [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306) |
+| Wixel        | SSD1331   | 96×64 (SPI) | ✔ | ✔ |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331) |
+| Raspberry Pi 3, Wixel | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi) |
+| Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano) |
+| ESP8266-1 | SSD1306   | 128×64 (SPI, I2C) |  | ✔ |  |  [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306) |
 | ESP8266-1 | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) |  |  | ✔ | [🔗](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306) |
 
 # Fritzing Parts
