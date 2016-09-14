@@ -1,4 +1,4 @@
-# Wixel_oled
+# Wixel_oled_ssd1331
 
 Spectrum analyzer on Pololu Wixel with SPI OLED's SSD1331. This scheme takes less then 10mA (on 5V).
 
