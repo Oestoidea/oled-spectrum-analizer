@@ -11,7 +11,7 @@ Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED'
 
 ![Arduino_Nano_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/pics/Arduino_Nano_3oleds_ssd1306.png)
 
-## Displays and CC2500+PA+LNA module
+## Displays and CC2500+PA+LNA Module
 
 Connect OLED's and CC2500+PA+LNA to Arduino Nano as shown on the picture.
 
@@ -21,7 +21,7 @@ Connect OLED's and CC2500+PA+LNA to Arduino Nano as shown on the picture.
 
 Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306) libraries in Arduino EDI. This scanner based on [Scanner 2.4 GHz Range of Ready-Made Modules](https://dev.rcopen.com/forum/f8/topic397991) (Russian) written by Valeriy Yatsenkov (aka Rover).
 
-## Connection map
+## Connection Map
 
 | Arduino Nano | CC2500        |
 | ------------ | ------------- |
