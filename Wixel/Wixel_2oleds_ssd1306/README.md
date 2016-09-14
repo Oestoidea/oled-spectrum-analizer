@@ -64,3 +64,7 @@ Wixel, OLED, and external antenna in the housing is shown below. Button on the l
 ![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_5.png)
 
 ![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_6.png)
+
+Spectrum twice stretched for 128×32 screen in height.
+
+![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_7.png)
