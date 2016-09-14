@@ -2,7 +2,7 @@
 #include <Wire.h>
 #include "font.h"
 
-#define heigth 32                       // 64 or 32 for 128x64 or 128x32 OLEDs
+#define height 32                       // 64 or 32 for 128x64 or 128x32 OLEDs
 
 #define offset        0x00             // offset=0 for SSD1306 controller
 //#define offset        0x02            // offset=2 for SH1106 controller
@@ -74,7 +74,7 @@ void loop(void) {
     }
     else
     {
-        for (int j = 0; j < heigth / 8; j++)
+        for (int j = 0; j < height / 8; j++)
         //for (int i = 0; i < n; ++i)
         {
             // Print SSID and RSSI for each network found
@@ -162,7 +162,7 @@ void displayOff(void)
 static void clear_display(void)
 {
     unsigned char k;
-    for(k = 0; k < heigth / 8; k++)
+    for(k = 0; k < height / 8; k++)
     { 
         setXY(k,0);    
         {
@@ -268,7 +268,7 @@ static void init_OLED(void)
     sendcommand(0xD5);    //SETDISPLAYCLOCKDIV
     sendcommand(0x80);    // the suggested ratio 0x80
     sendcommand(0xA8);    //SSD1306_SETMULTIPLEX
-    if (heigth == 64)
+    if (height == 64)
         sendcommand(0x3F);  // for 128x64
     else
         sendcommand(0x1F);  // for 128x32
@@ -287,12 +287,12 @@ static void init_OLED(void)
     sendcommand(0xC0);
     
     sendcommand(0xDA);     //COMSCANDEC
-    if (heigth == 64)       //
+    if (height == 64)       //
         sendcommand(0x12);  // for 128x64
     else
         sendcommand(0x02);  // for 128x32
     sendcommand(0x81);     //SETCONTRAS
-    if (heigth == 64)       //
+    if (height == 64)       //
         sendcommand(0xCF);  // for 128x64
     else
         sendcommand(0x8F);  // for 128x32

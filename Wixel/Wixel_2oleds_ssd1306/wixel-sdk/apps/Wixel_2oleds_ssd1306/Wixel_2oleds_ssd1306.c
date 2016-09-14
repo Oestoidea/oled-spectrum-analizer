@@ -8,6 +8,7 @@
 
 int32 CODE param_spi_on = 1;
 int32 CODE param_i2c_on = 1;
+int32 CODE param_height = 32;
 
 static uint8 XDATA initData[25] = 
 {
@@ -203,6 +204,8 @@ void checkRadioChannels(void)
             else
                 rssiHalfValue[channel/2] += 105;
         }
+        rssiHalfValue[channel/2] *= 64 / param_height;
+   
     }  // the above loop takes about 414 ms on average, so about 1.6 ms/channel
 
     LED_GREEN(0);
