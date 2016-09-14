@@ -29,7 +29,7 @@ Connect OLED's to Wixel as shown on the picture. The initialization and some fea
 
 Buttom __Pause__ stops processes. Buttom __Reset__ puts maximum graph. Buttom __Mode__ toggles between display modes. 
 
-## Connection map
+## Connection Map
 
 | Wixel    | SPI OLED      |
 | -------- | ------------- |
