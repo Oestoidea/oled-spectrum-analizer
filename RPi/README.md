@@ -1,4 +1,4 @@
-# RPi_2oleds
+# RPi_2oleds_ssd1306
 
 Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's SSD1306.
 
