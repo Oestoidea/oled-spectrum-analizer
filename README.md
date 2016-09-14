@@ -12,8 +12,8 @@ And another subprojects:
 
 * [RPi_2oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi) — _Raspberry Pi 3_ and _Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_ 
 * [Arduino_Nano_3oleds_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano) — _Arduino Nano v3_ and _TI CC2500+PA+LNA_ with SPI and I2C _OLED's SSD1306_
-* [ESP8266_oled_spectrum_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266) — _ESP8266-1_ with I2C _OLED's SSD1306_
-* [ESP8266_oled_list_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266) — _ESP8266-1_ with I2C _OLED's SSD1306_
+* [ESP8266_oled_spectrum_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306) — _ESP8266-1_ with I2C _OLED's SSD1306_
+* [ESP8266_oled_list_ssd1306](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306) — _ESP8266-1_ with I2C _OLED's SSD1306_
 
 Also you can find additional parts for [Fritzing](http://fritzing.org/home/) used in this project schemes:
 
