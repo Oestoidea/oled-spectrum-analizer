@@ -5,13 +5,13 @@ This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's 
 This project helps to biuld spectrum analyzer on different modules. It contains next Wixel subprojects:
 
 * [_Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_2oleds_ssd1306)
-* [_Pololu Wixel_ with SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306)
+* [_Pololu Wixel_ with two SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306)
 * [_Pololu Wixel_ with SPI _OLED SSD1331_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331)
 
 And another subprojects:
 
 * [_Raspberry Pi 3_ and _Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi)
-* [_Arduino Nano v3_ and _TI CC2500+PA+LNA_ with SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano)
+* [_Arduino Nano v3_ and _TI CC2500+PA+LNA_ with two SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano)
 * [_ESP8266-1_ with I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306)
 * [_ESP8266-1_ with I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306)
 
