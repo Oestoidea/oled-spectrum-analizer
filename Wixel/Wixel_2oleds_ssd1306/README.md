@@ -29,7 +29,7 @@ Connect OLED's to Wixel as shown on the picture.
 ## Connection map
 
 | Wixel    | SPI OLED      |
-| -------- |:-------------:|
+| -------- | ------------- |
 | P0_1     | RES           |
 | P0_2     | D/C           |
 | P0_3     | DIN (SDA)     |
@@ -39,19 +39,19 @@ Connect OLED's to Wixel as shown on the picture.
 | GND      | GND           |
 
 | Wixel    | I2C OLED      |
-| -------- |:-------------:|
+| -------- | ------------- |
 | P1_0     | SCK           |
 | P1_1     | SDA           |
 | 3V3      | VCC           |
 | GND      | GND           |
 
 | Wixel    | switch        |
-| -------- |:-------------:|
+| -------- | ------------- |
 | P0_0     | normally open |
 | GND      | normally open |
 
 | Wixel    | power supply  |
-| -------- |:-------------:|
+| -------- | ------------- |
 | VIN      | 2.7–6.5V      |
 | GND      | GND           |
 
