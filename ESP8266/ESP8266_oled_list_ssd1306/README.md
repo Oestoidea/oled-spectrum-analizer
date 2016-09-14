@@ -1,6 +1,6 @@
 # ESP8266_oled_list_ssd1306
 
-Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. The spectral spectral width is limited to thirteen Wi-Fi channels. Displays data only for channels but not spectrum. This scheme takes less then 50mA (on 5V).
+Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. Displays first four APs with maximum RSSI. These change every five seconds. This scheme takes less then 50mA (on 5V).
 
 ## Equipment
 
@@ -8,7 +8,7 @@ Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. The spectral spectral widt
 2. OLED 0.96" 128×64 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
 3. AMS1117 module (or LM1117)
 
-![ESP8266_oled_list_ssd1306_photo]()
+![ESP8266_oled_list_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_list_ssd1306/pics/ESP8266_oled_list_ssd1306.png)
 
 ## Display
 
@@ -40,4 +40,4 @@ ESP8266 does not have 5V input supply then we have to use an additional voltage 
 
 The prototype is made with plug-in modules for debugging convenience. Additionally, you can display the COM-port connectors (Rx, Tx, GND) to read odnovremennoego list of networks.
 
-![ESP8266_oled_list_ssd1306_photo]()
+![ESP8266_oled_list_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_list_ssd1306/pics/ESP8266_oled_list_ssd1306_2.png)
