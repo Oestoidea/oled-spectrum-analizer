@@ -1,4 +1,4 @@
-# Arduino_Nano_3oleds
+# Arduino_Nano_3oleds_ssd1306
 
 Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED's SSD1306. The spectral width is 2400.01–2503.40 MHz with spacing in 405.456543 kHz on two SPI displays. Displays logo on I2C display. This scheme takes less then 50mA (on 5V).
 
@@ -9,13 +9,13 @@ Spectrum analyzer on Arduino Nano and TI CC2500+PA+LNA with SPI and/or I2C OLED'
 3. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
 4. Two OLED`s 0.96" 128×64 SPI SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
 
-![Arduino_Nano_3oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano_3oleds/pics/Arduino_Nano_3oleds.png)
+![Arduino_Nano_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/pics/Arduino_Nano_3oleds_ssd1306.png)
 
 ## Displays and CC2500+PA+LNA module
 
 Connect OLED's and CC2500+PA+LNA to Arduino Nano as shown on the picture.
 
-![Arduino_Nano_3oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano_3oleds/fritzing-scheme/Arduino_Nano_3oleds_bb.png)
+![Arduino_Nano_3oleds_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/fritzing-scheme/Arduino_Nano_3oleds_ssd1306_bb.png)
 
 ## Arduino Nano
 
@@ -79,4 +79,4 @@ Arduino Nano does not have enough memory, because it was not possible to realize
 
 Prototype is assembled in a clear acrylic case for Rasberry Pi, but can be built more compactly. Button with a red cap — pause.
 
-![Arduino_Nano_3oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano_3oleds/pics/Arduino_Nano_3oleds2.png)
+![Arduino_Nano_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/pics/Arduino_Nano_3oleds_ssd1306_2.png)
