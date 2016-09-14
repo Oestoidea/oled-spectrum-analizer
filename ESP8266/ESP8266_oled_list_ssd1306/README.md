@@ -18,7 +18,7 @@ Connect OLED to ESP8266 as shown on the picture.
 
 ## ESP8266
 
-Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) libraries in Arduino EDI. This scanner based on standart WiFiScan from SDK and [Driver for the SSD1306 based 128x64 pixel OLED display](https://github.com/squix78/esp8266-oled-ssd1306) written by Daniel Eichhorn.
+Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) libraries in Arduino EDI. This scanner based on standart WiFiScan from SDK and [ESP8266-I2C-OLED](https://github.com/costonisp/ESP8266-I2C-OLED) written by costonisp.
 
 ## Connection map
 
