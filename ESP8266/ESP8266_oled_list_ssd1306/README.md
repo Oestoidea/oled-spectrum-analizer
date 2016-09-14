@@ -14,7 +14,7 @@ Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. The spectral spectral widt
 
 Connect OLED to ESP8266 as shown on the picture.
 
-![ESP8266_oled_list_ssd1306_scheme]()
+![ESP8266_oled_list_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_list_ssd1306/fritzing-scheme/ESP8266_oled_list_ssd1306_bb.png)
 
 ## ESP8266
 
