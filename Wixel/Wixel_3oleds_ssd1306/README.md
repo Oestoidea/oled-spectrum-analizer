@@ -26,7 +26,7 @@ Connect OLED's to Wixel as shown on the picture.
 
 ![Wixel_3oleds_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/fritzing-scheme/Wixel_3oleds_ssd1306_bb.png)
 
-## Connection map
+## Connection Map
 
 | Wixel    | SPI0 OLED     |
 | -------- | ------------- |
