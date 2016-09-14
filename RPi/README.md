@@ -9,7 +9,7 @@ Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's 
 3. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
 4. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
 
-![RPi_2oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/pics/RPi_2oleds.png)
+![RPi_2oledss_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi/pics/RPi_2oleds_ssd1306.png)
 
 ## Wixel
 
@@ -29,7 +29,7 @@ sudo ./wixelcmd list
 Put the firmware on Wixel:
 
 ```
-sudo ./wixelcmd write RPi_2oleds.wxl -a
+sudo ./wixelcmd write RPi_2oleds_ssd1306.wxl -a
 ```
 
 This scanner based on [Spectrum Analyzer](https://github.com/pololu/wixel-sdk/tree/dev/david/analyzer/apps/spectrum_analyzer) written by David E. Grayson.
@@ -38,14 +38,14 @@ This scanner based on [Spectrum Analyzer](https://github.com/pololu/wixel-sdk/tr
 
 Connect OLED's to Raspberry Pi as shown on the picture.
 
-![RPi_2oleds_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/fritzing-scheme/RPi_2oleds_bb.png)
+![RPi_2oledss_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi/fritzing-scheme/RPi_2oleds_ssd1306_bb.png)
 
 ## Raspberry Pi 3
 
-For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi_2oleds/RPi/RPi_2oleds.py).
+For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi/RPi/RPi_2oleds_ssd1306.py).
 
 ```
-sudo python3 RPi_2oleds.py
+sudo python3 RPi_2oleds_ssd1306.py
 ```
 
 _If you have only I2C or SPI display just comment lines with missing connection._
@@ -53,7 +53,7 @@ _If you have only I2C or SPI display just comment lines with missing connection.
 ## Connection map
 
 | RPi         | SPI OLED      |
-| ----------- |:-------------:|
+| ----------- | ------------- |
 | GPIO25 (22) | RES           |
 | GPIO9 (21)  | D/C           |
 | GPIO10 (19) | DIN (SDA)     |
@@ -62,13 +62,13 @@ _If you have only I2C or SPI display just comment lines with missing connection.
 | 3V3 (17)    | VCC           |
 | GND (20)    | GND           |
 
-| RPi       | I2C OLED      |
-| --------- |:-------------:|
-| GPIO3 (5) | SCK           |
-| GPIO2 (3) | SDA           |
-| 3V3 (1)   | VCC           |
-| GND (6)   | GND           |
+| RPi         | I2C OLED      |
+| ----------- | ------------- |
+| GPIO3 (5)   | SCK           |
+| GPIO2 (3)   | SDA           |
+| 3V3 (1)     | VCC           |
+| GND (6)     | GND           |
 
-| RPi      | Wixel         |
-| -------- |:-------------:|
-| USB      | mini USB      |
+| RPi         | Wixel         |
+| ----------- | ------------- |
+| USB         | mini USB      |
