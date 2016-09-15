@@ -25,9 +25,9 @@ Connect OLED's to Wixel as shown on the picture. The initialization and some fea
 
 ![Wixel_oled_ssd1331_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_oled_ssd1331/fritzing-scheme/Wixel_oled_ssd1331_bb.png)
 
-## Buttoms
+## Buttons
 
-Buttom __Pause__ stops processes. Buttom __Reset__ puts maximum graph. Buttom __Mode__ toggles between display modes. 
+Button __Pause__ stops processes. Button __Reset__ puts maximum graph. Button __Mode__ toggles between display modes. 
 
 ## Connection Map
 
