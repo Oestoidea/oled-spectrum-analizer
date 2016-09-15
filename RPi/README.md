@@ -20,7 +20,7 @@ wget https://www.pololu.com/file/0J872/wixel-arm-linux-gnueabihf-150527.tar.gz
 tar -xzvf wixel-arm-linux-gnueabihf-150527.tar.gz
 ```
 
-Сonnect the Pololu Wixel to Raspberry Pi by USB and check the connection:
+Connect the Pololu Wixel to Raspberry Pi by USB and check the connection:
 
 ```
 sudo ./wixelcmd list
