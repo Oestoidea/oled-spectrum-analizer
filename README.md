@@ -15,7 +15,7 @@ And another subprojects:
 * [_Raspberry Pi 3_ and _Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi)
 * [_Arduino Nano v3_ and _TI CC2500+PA+LNA_ with two SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Arduino_Nano)
 * [_ESP8266-1_ with I2C _OLED's SSD1306_ Spectrum](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306)
-* [_ESP8266-1_ with I2C _OLED's SSD1306_APs List](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306)
+* [_ESP8266-1_ with I2C _OLED's SSD1306_ APs List](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_list_ssd1306)
 
 # Projects Comparison Table
 
