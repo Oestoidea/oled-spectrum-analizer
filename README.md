@@ -38,10 +38,19 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 * [CC2500+PA+LNA](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/CC2500%2BPA%2BLNA.fzpz)
 * [ESP8266-1](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/ESP8266-1.fzpz)
 
+# Future Plans
+
+* To make a combination device with Arduino and ESP8266.
+* To add in Raspberry Pi project another low-cost ISM spectrum analyzers (Metageek Wi-Spy 2.4i and 2.4x, Ubiquiti AirView2, Wi-detector, and TI eZ430-RF2500) by USB.
+* To connect Cypress CYWUSB6935 module to Arduino and STM32 by SPI.
+* To connect nRF24L01 module to Arduino and STM32 by SPI.
+* To connect CC2500 module to STM32 with OLED indication.
+
 # Author
 
 Vladimir Sokolov aka Oestoidea
 
-# License
+# Licenses
 
-[GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
+The source code are licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html).
+The schematics are licensed under the [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
