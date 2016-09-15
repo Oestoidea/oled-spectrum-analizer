@@ -8,6 +8,8 @@ This project helps to biuld spectrum analyzer on different modules. It contains 
 * [_Pololu Wixel_ with two SPI and I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306)
 * [_Pololu Wixel_ with SPI _OLED SSD1331_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331)
 
+![oled-spectrum-analizer_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/pics/Wixel_3oleds_ssd1306_2.png)
+
 And another subprojects:
 
 * [_Raspberry Pi 3_ and _Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/RPi)
@@ -45,6 +47,8 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 * To connect Cypress CYWUSB6935 module to Arduino and STM32 by SPI.
 * To connect nRF24L01 module to Arduino and STM32 by SPI.
 * To connect CC2500 module to STM32 with OLED indication.
+
+![oled-spectrum-analizer_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/pics/future.png)
 
 # Author
 
