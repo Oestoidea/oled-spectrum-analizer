@@ -12,7 +12,7 @@ Spectrum analyzer on Pololu Wixel (CC2511F32) with SPI and/or I2C OLED's SSD1306
 
 ## Wixel
 
-Put the firmware on Wixel with parameters __show_grid__ (for grids) and __I2C_on__ (for additonal I2C display). For example, to compile and download the firmware with [wixel-sdk](http://pololu.github.io/wixel-sdk/) on OS Windows:
+Put the firmware on Wixel with parameters __show_grid__ (for grids) and __I2C_on__ (for additional I2C display). For example, to compile and download the firmware with [wixel-sdk](http://pololu.github.io/wixel-sdk/) on OS Windows:
 
 ```
 C:\wixel-sdk>make load_Wixel_3oleds_ssd1306 S="show_grid=1 I2C_on=1"
@@ -67,7 +67,7 @@ Connect OLED's to Wixel as shown on the picture.
 
 ## Implementation
 
-Prototype is assembled in a clear acrylic case for Rasberry Pi, but can be built more compactly. Button with a red cap — switch on, and the second one — pause.
+Prototype is assembled in a clear acrylic case for Raspberry Pi, but can be built more compactly. Button with a red cap — switch on, and the second one — pause.
 
 ![Wixel_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/pics/Wixel_3oleds_ssd1306_4.png)
 
