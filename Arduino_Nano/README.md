@@ -19,7 +19,7 @@ Connect OLED's and CC2500+PA+LNA to Arduino Nano as shown on the picture.
 
 ## Arduino Nano
 
-Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306) libraries in Arduino EDI. This scanner based on [Scanner 2.4 GHz Range of Ready-Made Modules](https://dev.rcopen.com/forum/f8/topic397991) (Russian) written by Valeriy Yatsenkov (aka Rover).
+Install [Adafruit GFX](https://github.com/adafruit/Adafruit-GFX-Library) and [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306) libraries in Arduino IDE. This scanner based on [Scanner 2.4 GHz Range of Ready-Made Modules](https://dev.rcopen.com/forum/f8/topic397991) (Russian) written by Valeriy Yatsenkov (aka Rover).
 
 ## Connection Map
 
@@ -77,6 +77,6 @@ Arduino Nano does not have enough memory, because it was not possible to realize
 
 ## Implementation
 
-Prototype is assembled in a clear acrylic case for Rasberry Pi, but can be built more compactly. Button with a red cap — pause.
+Prototype is assembled in a clear acrylic case for Raspberry Pi, but can be built more compactly. Button with a red cap — pause.
 
 ![Arduino_Nano_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/pics/Arduino_Nano_3oleds_ssd1306_2.png)
