@@ -26,7 +26,7 @@ And another subprojects:
 | Wixel        | SSD1331   | 96×64 (SPI) | ✔ | ✔ |  |  [🔗](./Wixel/Wixel_oled_ssd1331) |
 | Raspberry Pi 3, Wixel | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](./RPi) |
 | Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | 128×64 (2×SPI, I2C) | ✔ |  |  |  [🔗](./Arduino_Nano) |
-| ESP8266-1 | SSD1306   | 128×64 (SPI, I2C) |  | ✔ |  |  [🔗](./ESP8266/ESP8266_oled_spectrum_ssd1306) |
+| ESP8266-1 | SSD1306   | 128×64 (SPI, I2C) |  | ✔ | ✔ |  [🔗](./ESP8266/ESP8266_oled_spectrum_ssd1306) |
 | ESP8266-1 | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) |  |  | ✔ | [🔗](./ESP8266/ESP8266_oled_list_ssd1306) |
 
 # Fritzing Parts
