@@ -16,6 +16,10 @@ Connect OLED to ESP8266 as shown on the picture.
 
 ![ESP8266_oled_spectrum_ssd1306_scheme](./fritzing-scheme/ESP8266_oled_spectrum_ssd1306_bb.png)
 
+Also you can take a list of AP's via virtual COM-port (when you use a UART-TTL with ESP-01 or NodeMCU).
+
+![ESP8266_oled_spectrum_ssd1306_photo](./pics/ESP8266_oled_spectrum_ssd1306_3.png)
+
 ## ESP8266
 
 Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) libraries in Arduino EDI. This scanner based on standard WiFiScan from SDK and [Driver for the SSD1306 based 128x64 pixel OLED display](https://github.com/squix78/esp8266-oled-ssd1306) written by Daniel Eichhorn.
@@ -41,3 +45,7 @@ ESP8266 does not have 5V input supply then we have to use an additional voltage 
 The prototype is made with plug-in modules for debugging convenience. Additionally, you can display the COM-port connectors (Rx, Tx, GND) to read odnovremennoego list of networks.
 
 ![ESP8266_oled_spectrum_ssd1306_photo](./pics/ESP8266_oled_spectrum_ssd1306_2.png)
+
+Or use NodeMCU card.
+
+![ESP8266_oled_spectrum_ssd1306_photo](./pics/ESP8266_oled_spectrum_ssd1306_4.png)

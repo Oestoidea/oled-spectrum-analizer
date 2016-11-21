@@ -3,7 +3,8 @@
 #include <ESP8266WiFi.h>
 #include "images.h"
 
-SSD1306 display(0x3c, 2, 0);
+//SSD1306 display(0x3c, 2, 0); // for ESP-01 SLC - GPIO0 (D3), SDA - GPIO2 (D4)
+SSD1306 display(0x3c, 0, 2); // for NodeMCU SDA - GPIO0 (D3), SLC - GPIO2 (D4)
 
 String encryptionTypeStr(uint8_t authmode) {
     switch(authmode) {
