@@ -4,17 +4,17 @@ Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. The spectral spectral widt
 
 ## Equipment
 
-1. ESP8266 ([ESP-01 fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/ESP8266-1.fzpz))
-2. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+1. ESP8266 ([ESP-01 fritzing part](../../fritzing-parts/ESP8266-1.fzpz))
+2. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
 3. AMS1117 module (or LM1117)
 
-![ESP8266_oled_spectrum_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_spectrum_ssd1306/pics/ESP8266_oled_spectrum_ssd1306.png)
+![ESP8266_oled_spectrum_ssd1306_photo](./pics/ESP8266_oled_spectrum_ssd1306.png)
 
 ## Display
 
 Connect OLED to ESP8266 as shown on the picture.
 
-![ESP8266_oled_spectrum_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_spectrum_ssd1306/fritzing-scheme/ESP8266_oled_spectrum_ssd1306_bb.png)
+![ESP8266_oled_spectrum_ssd1306_scheme](./fritzing-scheme/ESP8266_oled_spectrum_ssd1306_bb.png)
 
 ## ESP8266
 
@@ -22,10 +22,10 @@ Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) l
 
 ## Connection Map
 
-| ESP8266-1    | OLED          |
-| ------------ | ------------- |
-| GPIO0        | SCL           |
-| GPIO2        | SDA           |
+| ESP8266-1    | or NodeMCU   | OLED          |
+| ------------ | ------------ | ------------- |
+| GPIO0        | D3           | SDA           |
+| GPIO2        | D4           | SCL           |
 
 | ESP8266-1    | OLED         | AMS1117       |
 | ------------ | ------------ | ------------- |
@@ -40,4 +40,4 @@ ESP8266 does not have 5V input supply then we have to use an additional voltage 
 
 The prototype is made with plug-in modules for debugging convenience. Additionally, you can display the COM-port connectors (Rx, Tx, GND) to read odnovremennoego list of networks.
 
-![ESP8266_oled_spectrum_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_spectrum_ssd1306/pics/ESP8266_oled_spectrum_ssd1306_2.png)
+![ESP8266_oled_spectrum_ssd1306_photo](./pics/ESP8266_oled_spectrum_ssd1306_2.png)

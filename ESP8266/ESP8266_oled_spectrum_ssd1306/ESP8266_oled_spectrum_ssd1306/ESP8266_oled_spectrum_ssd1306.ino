@@ -74,7 +74,7 @@ void loop()
     int channels[13] = {0};
     
     // WiFi.scanNetworks will return the number of networks found
-    int n = WiFi.scanNetworks(false,true);encryptionTypeStr
+    int n = WiFi.scanNetworks(false,true);
   
     Serial.println("scan done");
     if (n == 0)
