@@ -4,11 +4,11 @@ Spectrum analyzer on Pololu Wixel (CC2511F32) with SPI and/or I2C OLED's SSD1306
 
 ## Equipment
 
-1. Pololu Wixel ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-2. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-3. Two OLED`s 0.96" 128×64 SPI SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
+1. Pololu Wixel ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+2. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+3. Two OLED`s 0.96" 128×64 SPI SSD1306 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
 
-![Wixel_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/pics/Wixel_3oleds_ssd1306_2.png)
+![Wixel_3oleds_ssd1306_photo](./pics/Wixel_3oleds_ssd1306_2.png)
 
 ## Wixel
 
@@ -24,7 +24,7 @@ More information about Wixel apps you can see on [official site](https://www.pol
 
 Connect OLED's to Wixel as shown on the picture.
 
-![Wixel_3oleds_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/fritzing-scheme/Wixel_3oleds_ssd1306_bb.png)
+![Wixel_3oleds_ssd1306_scheme](./fritzing-scheme/Wixel_3oleds_ssd1306_bb.png)
 
 ## Connection Map
 
@@ -69,8 +69,8 @@ Connect OLED's to Wixel as shown on the picture.
 
 Prototype is assembled in a clear acrylic case for Raspberry Pi, but can be built more compactly. Button with a red cap — switch on, and the second one — pause.
 
-![Wixel_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/pics/Wixel_3oleds_ssd1306_4.png)
+![Wixel_3oleds_ssd1306_photo](./pics/Wixel_3oleds_ssd1306_4.png)
 
 The left screen displays ZigBee and Wi-Fi channels (not all channels fall within the available range). The higher the channel in the histogram, the more free.
 
-![Wixel_3oleds_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/pics/Wixel_3oleds_ssd1306_3.png)
+![Wixel_3oleds_photo](./pics/Wixel_3oleds_ssd1306_3.png)

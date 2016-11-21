@@ -4,10 +4,10 @@ Spectrum analyzer on Pololu Wixel with SPI OLED's SSD1331. This scheme takes les
 
 ## Equipment
 
-1. Pololu Wixel ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-2. OLED 0.95" 96×64 SPI SSD1331 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz))
+1. Pololu Wixel ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+2. OLED 0.95" 96×64 SPI SSD1331 ([fritzing part](../../fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz))
 
-[![Wixel_oled_ssd1331_video](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_oled_ssd1331/pics/Wixel_oled_ssd1331_video.png)](https://www.youtube.com/watch?v=7rlPyKthjLw "Spectrum Analyzer 2.4 GHz on Wixel with OLED SSD1331")
+[![Wixel_oled_ssd1331_video](./pics/Wixel_oled_ssd1331_video.png)](https://www.youtube.com/watch?v=7rlPyKthjLw "Spectrum Analyzer 2.4 GHz on Wixel with OLED SSD1331")
 
 ## Wixel
 
@@ -23,7 +23,7 @@ More information about Wixel apps you can see on [official site](https://www.pol
 
 Connect OLED's to Wixel as shown on the picture. The initialization and some features borrowed from the project [RGB OLED SSD1331](https://github.com/Seeed-Studio/RGB_OLED_SSD1331) by Lawliet Zou (Seeed Studio).
 
-![Wixel_oled_ssd1331_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_oled_ssd1331/fritzing-scheme/Wixel_oled_ssd1331_bb.png)
+![Wixel_oled_ssd1331_scheme](./fritzing-scheme/Wixel_oled_ssd1331_bb.png)
 
 ## Buttons
 
@@ -67,16 +67,16 @@ Prototype is assembled on the breadboard. The right button on this example — r
 
 Start screen with the logo appears at reboot.
 
-![Wixel_oled_ssd1331_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_oled_ssd1331/pics/Wixel_oled_ssd1331.png)
+![Wixel_oled_ssd1331_photo](./pics/Wixel_oled_ssd1331.png)
 
 The first mode with the current and the maximum spectrum curves and values at the maximum points.
 
-![Wixel_oled_ssd1331_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_oled_ssd1331/pics/Wixel_oled_ssd1331_2.png)
+![Wixel_oled_ssd1331_photo](./pics/Wixel_oled_ssd1331_2.png)
 
 The second mode is different information about the free channels instead of the frequency scale.
 
-![Wixel_oled_ssd1331_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_oled_ssd1331/pics/Wixel_oled_ssd1331_3.png)
+![Wixel_oled_ssd1331_photo](./pics/Wixel_oled_ssd1331_3.png)
 
 The last mode displays ZigBee and Wi-Fi channels (not all channels fall within the available range). The higher the channel in the histogram, the more free.
 
-![Wixel_oled_ssd1331_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_oled_ssd1331/pics/Wixel_oled_ssd1331_4.png)
+![Wixel_oled_ssd1331_photo](./pics/Wixel_oled_ssd1331_4.png)
