@@ -29,7 +29,7 @@ Adafruit_SSD1306 displaySPI1(OLED_MOSI_SPI1, OLED_CLK_SPI1, OLED_DC_SPI1, OLED_R
 
 #define RSSI_OFFSET      95  // offset for displayed data
 #define MAX_CHAN_QTY    255  // max number of channel for spacing 405.456543 kHz
-#define MAX_DISP_LINE   127  // limit horizontal display resolution if need for small display
+#define MAX_DISP_LINE   127  // limit vertical display resolution if need for small display
 #define MAX_SAMPLING    100  // qty of samples in each iteration (1...100) to found a max RSSI value
 /*
 static const unsigned char PROGMEM logo16_glcd_bmp[] = {
@@ -98,7 +98,7 @@ void setup() {
 void loop() {
   if (digitalRead(17) == HIGH) {
   
-     for (int i = 0; i <= 255; i++) {
+    for (int i = 0; i <= 255; i++) {
       CC2500_Write(CHANNR, i);          // set channel
       CC2500_Write(FSCAL1, cal[i]);     // restore calibration value for this channel
       delayMicroseconds(300);           // settling time, refer to datasheet
@@ -118,11 +118,11 @@ void loop() {
         } else {
           RSSI_dbm += RSSI_data / 2 - 70;
         }    
-        //if (RSSI_dbm > RSSI_max) RSSI_max = RSSI_dbm; // keep maximum   
+        if (RSSI_dbm > RSSI_max) RSSI_max = RSSI_dbm; // keep maximum   
       }
-      RSSI_max = RSSI_dbm / MAX_SAMPLING;
+      //RSSI_max = RSSI_dbm / MAX_SAMPLING;
       RSSI_max += RSSI_OFFSET;
-      if (RSSI_max > 64) RSSI_max = 64; // 110
+      if (RSSI_max > 63) RSSI_max = 63; // 110
       if (RSSI_max < 0) RSSI_max = 0;
       rssi_data[i] = RSSI_max;
     }
@@ -131,7 +131,6 @@ void loop() {
 }
 
 void DrawScreen() {
-  int x;
   digitalWrite(OLED_CS_SPI0, LOW);
   displaySPI0.clearDisplay();
   // grid
@@ -181,8 +180,10 @@ void DrawScreen() {
   displaySPI0.display();
 
   displaySPI0.setRotation(0);
-  for (x = 0; x <= 127; x++)
+  for (int x = 0; x <= 127; x++) {
+    if (rssi_data[x] >= 63) rssi_data[x] = 221 - rssi_data[x];
     displaySPI0.drawLine(127 - x, 0, 127 - x, rssi_data[x] - 1, WHITE);
+  }
   displaySPI0.display();
   digitalWrite(OLED_CS_SPI0, HIGH);
   
@@ -235,8 +236,10 @@ void DrawScreen() {
   displaySPI1.display();
   
   displaySPI1.setRotation(0);
-  for (x = 128; x <= 255; x++)
+  for (int x = 128; x <= 255; x++) {
+    if (rssi_data[x] >= 63) rssi_data[x] = 221 - rssi_data[x];
     displaySPI1.drawLine(255 - x, 0, 255 - x, rssi_data[x] - 1, WHITE);
+  }
   displaySPI1.display();
   digitalWrite(OLED_CS_SPI1, HIGH);
 }

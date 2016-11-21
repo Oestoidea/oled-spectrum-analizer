@@ -80,3 +80,11 @@ Arduino Nano does not have enough memory, because it was not possible to realize
 Prototype is assembled in a clear acrylic case for Raspberry Pi, but can be built more compactly. Button with a red cap — pause.
 
 ![Arduino_Nano_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/pics/Arduino_Nano_3oleds_ssd1306_2.png)
+
+You can also use the Arduino Mini Pro card with UART-TTL and download a firmware, for example, as shown in the picture:
+
+![Arduino_Nano_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/pics/Arduino_Nano_3oleds_ssd1306_3.png)
+
+It can also be combined with the project on [ESP8266](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/ESP8266/ESP8266_oled_spectrum_ssd1306):
+
+![Arduino_Nano_3oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Arduino_Nano/pics/Arduino_Nano_3oleds_ssd1306_4.png)
