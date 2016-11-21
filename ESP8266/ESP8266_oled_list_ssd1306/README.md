@@ -22,10 +22,10 @@ Install [ESP8266](http://esp8266.ru/arduino-ide-esp8266/#fast-start) (Russian) l
 
 ## Connection Map
 
-| ESP8266-1    | OLED          |
-| ------------ | ------------- |
-| GPIO0        | SCL           |
-| GPIO2        | SDA           |
+| ESP8266-1    | or NodeMCU   | OLED          |
+| ------------ | ------------ | ------------- |
+| GPIO0        | D3           | SDA           |
+| GPIO2        | D4           | SCL           |
 
 | ESP8266-1    | OLED         | AMS1117       |
 | ------------ | ------------ | ------------- |
@@ -41,3 +41,11 @@ ESP8266 does not have 5V input supply then we have to use an additional voltage 
 The prototype is made with plug-in modules for debugging convenience. Additionally, you can display the COM-port connectors (Rx, Tx, GND) to read odnovremennoego list of networks.
 
 ![ESP8266_oled_list_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_list_ssd1306/pics/ESP8266_oled_list_ssd1306_2.png)
+
+You can also use the NodeMCU card to connect the display. With the UART-TTL CH340G chip:
+
+![ESP8266_oled_list_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_list_ssd1306/pics/ESP8266_oled_list_ssd1306_3.png)
+
+With the UART-TTL CP2102 chip :
+
+![ESP8266_oled_list_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/ESP8266/ESP8266_oled_list_ssd1306/pics/ESP8266_oled_list_ssd1306_4.png)

@@ -36,7 +36,7 @@ String encryptionTypeStr(uint8_t authmode) {
 
 void setup(void) {
     Serial.begin(115200);
-    Wire.begin(2,0);                        // Initialize I2C and OLED Display
+    Wire.begin(0,2);                        // Initialize I2C and OLED Display SDA - GPIO0 (D3), SLC - GPIO2 (D4)
     init_OLED();
     reset_display();
         
