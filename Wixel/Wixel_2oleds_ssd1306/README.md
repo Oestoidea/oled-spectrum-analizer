@@ -4,11 +4,11 @@ Spectrum analyzer on Pololu Wixel with SPI and/or I2C OLED's SSD1306. This schem
 
 ## Equipment
 
-1. Pololu Wixel ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-2. OLED 0.96" 128×64 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
-3. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
+1. Pololu Wixel ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+2. OLED 0.96" 128×64 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
+3. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
 
-![Wixel_2oleds_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306.png)
+![Wixel_2oleds_ssd1306_photo](./pics/Wixel_2oleds_ssd1306.png)
 
 ## Wixel
 
@@ -24,7 +24,7 @@ More information about Wixel apps you can see on [official site](https://www.pol
 
 Connect OLED's to Wixel as shown on the picture.
 
-![Wixel_2oleds_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/fritzing-scheme/Wixel_2oleds_ssd1306_bb.png)
+![Wixel_2oleds_ssd1306_scheme](./fritzing-scheme/Wixel_2oleds_ssd1306_bb.png)
 
 ## Connection Map
 
@@ -59,12 +59,12 @@ Connect OLED's to Wixel as shown on the picture.
 
 Wixel, OLED, and external antenna in the housing is shown below. Button on the left size — switch on, and on the right — pause.
 
-![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_4.png)
+![Wixel_2oleds_ssd1306_implementation](./pics/Wixel_2oleds_ssd1306_4.png)
 
-![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_5.png)
+![Wixel_2oleds_ssd1306_implementation](./pics/Wixel_2oleds_ssd1306_5.png)
 
-![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_6.png)
+![Wixel_2oleds_ssd1306_implementation](./pics/Wixel_2oleds_ssd1306_6.png)
 
 Spectrum twice stretched for 128×32 screen in height.
 
-![Wixel_2oleds_ssd1306_implementation](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_2oleds_ssd1306/pics/Wixel_2oleds_ssd1306_7.png)
+![Wixel_2oleds_ssd1306_implementation](./pics/Wixel_2oleds_ssd1306_7.png)
