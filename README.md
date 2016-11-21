@@ -42,7 +42,7 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 
 # Task List
 
-<img src="https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/pics/future.png" alt="future" style="width: 300px; display: block; margin-left: auto; margin-right: auto;"/>
+<img src="https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/pics/future.png" alt="future" style="width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
 
 * [ ] To make a combination device with Arduino and ESP8266.
 * [ ] To add in Raspberry Pi project another low-cost ISM spectrum analyzers (Metageek Wi-Spy 2.4i and 2.4x, Ubiquiti AirView2, Wi-detector, and TI eZ430-RF2500) by USB.
@@ -50,7 +50,7 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 * [ ] To connect nRF24L01 module to Arduino and STM32 by SPI.
 * [ ] To connect CC2500 module to STM32 with OLED indication.
 
-![oled-spectrum-analizer_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/pics/ESP8266.png =300x)
+![oled-spectrum-analizer_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/pics/ESP8266.png)
 
 # Author
 
