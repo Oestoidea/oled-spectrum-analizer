@@ -8,7 +8,7 @@ This project helps to biuld spectrum analyzer on different modules. It contains 
 * [_Pololu Wixel_ with two SPI and/or I2C _OLED's SSD1306_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_3oleds_ssd1306)
 * [_Pololu Wixel_ with SPI _OLED SSD1331_](https://github.com/Oestoidea/oled-spectrum-analizer/tree/master/Wixel/Wixel_oled_ssd1331)
 
-![oled-spectrum-analizer_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/Wixel/Wixel_3oleds_ssd1306/pics/Wixel_3oleds_ssd1306_2.png)
+![oled-spectrum-analizer_photo](./pics/Wixel_3oleds_ssd1306_2.png)
 
 And another subprojects:
 
@@ -38,7 +38,7 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 * [OLED 0.96" 128×64 I2C SSD1306](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)
 * [OLED 0.95" 96×64 SPI SSD1331](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz)
 * [CC2500+PA+LNA](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/CC2500%2BPA%2BLNA.fzpz)
-* [ESP8266-1](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/ESP8266-1.fzpz)
+* [ESP8266-1](./fritzing-parts/ESP8266-1.fzpz)
 
 # Task List
 
@@ -59,4 +59,5 @@ Vladimir Sokolov aka Oestoidea
 # Licenses
 
 The source code are licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html).
+
 The schematics are licensed under the [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/).
