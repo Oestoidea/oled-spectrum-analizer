@@ -5,11 +5,11 @@ Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's 
 ## Equipment
 
 1. Raspberry Pi 3 (OS Raspbian)
-2. Pololu Wixel ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-3. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-4. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
+2. Pololu Wixel ([fritzing part](../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+3. OLED 0.96" 128×64 I2C SSD1306 ([fritzing part](../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
+4. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](../fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
 
-![RPi_2oledss_ssd1306_photo](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi/pics/RPi_2oleds_ssd1306.png)
+![RPi_2oledss_ssd1306_photo](./pics/RPi_2oleds_ssd1306.png)
 
 ## Wixel
 
@@ -38,11 +38,11 @@ This scanner based on [Spectrum Analyzer](https://github.com/pololu/wixel-sdk/tr
 
 Connect OLED's to Raspberry Pi as shown on the picture.
 
-![RPi_2oledss_ssd1306_scheme](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi/fritzing-scheme/RPi_2oleds_ssd1306_bb.png)
+![RPi_2oledss_ssd1306_scheme](./fritzing-scheme/RPi_2oleds_ssd1306_bb.png)
 
 ## Raspberry Pi 3
 
-For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](https://github.com/Oestoidea/oled-spectrum-analizer/blob/master/RPi/RPi/RPi_2oleds_ssd1306.py).
+For correct operation of the display, set the library [Adafruit](https://github.com/adafruit/Adafruit_Python_SSD1306) on Raspberry Pi and add the Python script [RPi_2oleds.py](./RPi/RPi_2oleds_ssd1306.py).
 
 ```
 sudo python3 RPi_2oleds_ssd1306.py
