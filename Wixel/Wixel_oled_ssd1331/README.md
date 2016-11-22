@@ -6,6 +6,7 @@ Spectrum analyzer on Pololu Wixel with SPI OLED's SSD1331. This scheme takes les
 
 1. Pololu Wixel ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
 2. OLED 0.95" 96×64 SPI SSD1331 ([fritzing part](../../fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz))
+3. Four switchers.
 
 [![Wixel_oled_ssd1331_video](./pics/Wixel_oled_ssd1331_video.png)](https://www.youtube.com/watch?v=7rlPyKthjLw "Spectrum Analyzer 2.4 GHz on Wixel with OLED SSD1331")
 
@@ -41,19 +42,19 @@ Button __Pause__ stops processes. Button __Reset__ puts maximum graph. Button __
 | 3V3      | VCC           |
 | GND      | GND           |
 
-| Wixel    | Pause switch  |
-| -------- | ------------- |
-| P0_0     | normally open |
-| GND      | normally open |
-
-| Wixel    | Reset switch  |
+| Wixel    | Mode switch   |
 | -------- | ------------- |
 | P1_2     | normally open |
 | GND      | normally open |
 
-| Wixel    | Mode switch   |
+| Wixel    | Pause switch  |
 | -------- | ------------- |
 | P1_3     | normally open |
+| GND      | normally open |
+
+| Wixel    | Reset switch  |
+| -------- | ------------- |
+| P1_4     | normally open |
 | GND      | normally open |
 
 | Wixel    | power supply  |
@@ -80,3 +81,7 @@ The second mode is different information about the free channels instead of the 
 The last mode displays ZigBee and Wi-Fi channels (not all channels fall within the available range). The higher the channel in the histogram, the more free.
 
 ![Wixel_oled_ssd1331_photo](./pics/Wixel_oled_ssd1331_4.png)
+
+Prototype is assembled in a clear acrylic case for Raspberry Pi, but can be built more compactly. Left button — switch on, the second one — reset, the third — pause, the fourth — mode selection.
+
+![Wixel_oled_ssd1331_photo](./pics/Wixel_oled_ssd1331_5.png)

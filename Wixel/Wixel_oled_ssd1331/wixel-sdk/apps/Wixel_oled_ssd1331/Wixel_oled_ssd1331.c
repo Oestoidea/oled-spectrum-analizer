@@ -815,7 +815,7 @@ void pressButtoms(void)
 {
     uint8 channel;
     
-    if (!isPinHigh(12) && state != 2 && pause) // Measure voltage on P1_2
+    if (!isPinHigh(14) && state != 2 && pause) // Measure voltage on P1_4 (Reset)
     {
         for (channel = 96; channel > 0; channel--)
         {
@@ -827,7 +827,7 @@ void pressButtoms(void)
         //clearWindow(0, 0, 95, 63);
     }
     
-    if (!isPinHigh(13) && pause) // Measure voltage on P1_3
+    if (!isPinHigh(12) && pause) // Measure voltage on P1_2 (Mode)
     {
         if (state == 2)
             state = 0;
@@ -850,13 +850,13 @@ void pressButtoms(void)
             break;
         }
       
-        while(!isPinHigh(13));
+        while(!isPinHigh(12));
     }
     
-    if (!isPinHigh(0)) // Measure voltage on P0_0
+    if (!isPinHigh(13)) // Measure voltage on P1_3 (Pause)
     {
         pause = !pause;
-        while(!isPinHigh(0));
+        while(!isPinHigh(13));
     }
 }
 
@@ -951,7 +951,7 @@ void normalizedWiFi(void)
         if (WiFi[i] > max)
             max = WiFi[i];
     
-    for(i = 2; i < 12; i++)
+    for (i = 2; i < 12; i++)
         WiFi[i] = (uint8) (20 * (max - WiFi[i]) / max);
 }
 
@@ -964,7 +964,7 @@ void normalizedZigBee(void)
         if (ZigBee[i] > max)
             max = ZigBee[i];
     
-    for(i = 12; i < 25; i++)
+    for (i = 12; i < 25; i++)
         ZigBee[i] = (uint8) (20 * (max - ZigBee[i]) / max);
 }
 
@@ -1048,7 +1048,7 @@ void checkRadioChannels(void)
                 rssiHalfValue[channel/2] += 105;
         }
         
-        if (!isPinHigh(0) || !isPinHigh(12) || !isPinHigh(13))
+        if (!isPinHigh(12) || !isPinHigh(13) || !isPinHigh(14))
             pressButtoms();
     }  // the above loop takes about 414 ms on average, so about 1.6 ms/channel
     
@@ -1085,7 +1085,6 @@ void checkRadioChannels(void)
     
     LED_GREEN(0);
 }
-
 
 void main()
 {
@@ -1137,7 +1136,7 @@ void main()
             LED_RED(1);
         }
         
-        if (!isPinHigh(0) || !isPinHigh(12) || !isPinHigh(13))
+        if (!isPinHigh(12) || !isPinHigh(13) || !isPinHigh(14))
             pressButtoms();
     }
 }
