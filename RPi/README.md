@@ -13,7 +13,7 @@ Spectrum analyzer on Raspberry Pi 3 and Pololu Wixel with SPI and/or I2C OLED's 
 
 ## Wixel
 
-Download and unzip __wixelcmd__ tool for load the firmware :
+Download and unzip __wixelcmd__ tool for load the firmware:
 
 ```
 wget https://www.pololu.com/file/0J872/wixel-arm-linux-gnueabihf-150527.tar.gz
