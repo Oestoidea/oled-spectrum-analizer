@@ -2,11 +2,11 @@
 #include <Wire.h>
 #include "font.h"
 
-#define height 32                       // 64 or 32 for 128x64 or 128x32 OLEDs
+#define height 64                       // 64 or 32 for 128x64 or 128x32 OLEDs
 
 #define offset        0x00             // offset=0 for SSD1306 controller
 //#define offset        0x02            // offset=2 for SH1106 controller
-#define OLED_address  0x3c
+#define OLEDaddress  0x3c
 #define myFont        myFont6         
 #define fontWeigth    6
 
@@ -36,16 +36,16 @@ String encryptionTypeStr(uint8_t authmode) {
 
 void setup(void) {
     Serial.begin(115200);
-    Wire.begin(0,2);                        // Initialize I2C and OLED Display SDA - GPIO0 (D3), SLC - GPIO2 (D4)
-    init_OLED();
-    reset_display();
+    Wire.begin(0, 2);                       // Initialize I2C and OLED Display SDA - GPIO0 (D3), SLC - GPIO2 (D4)
+    initOLED();                             // Initialize I2C and OLED Display SDA - GPIO7 (SD0), SLC - GPIO6 (CLK)
+    resetDisplay();
         
     WiFi.mode(WIFI_STA);
     WiFi.disconnect();
 
     //sendStrXY("Setup done",0,0);
     delay(100);
-    clear_display();
+    clearDisplay();
     
     Serial.println("Setup done");
     Serial.println();
@@ -66,7 +66,7 @@ void loop(void) {
             if (WiFi.RSSI(indices[j]) > WiFi.RSSI(indices[i]))
                 std::swap(indices[i], indices[j]);
     
-    //clear_display();
+    //clearDisplay();
     if (n == 0)
     {
         sendStrXY("no networks",0,0);
@@ -87,10 +87,10 @@ void loop(void) {
             else
                 snprintf(CHtmp, 4, "% d", WiFi.channel(indices[j]));
             CH = strcpy((char*)malloc(5), CHtmp);
-            clear_row(j);
-            sendStrXY(CH,j,0);
-            sendStrXY(SSID,j,2);
-            sendStrXY(RSSI,j,13); // prints SSID on OLED
+            clearRow(j);
+            sendStrXY(CH, j, 0);
+            sendStrXY(SSID, j, 2);
+            sendStrXY(RSSI, j, 13); // prints SSID on OLED
             delay(10);
         }
 
@@ -139,63 +139,59 @@ void loop(void) {
 }
 
 // Resets display depending on the actual mode.
-static void reset_display(void)
+static void resetDisplay(void)
 {
     displayOff();
-    clear_display();
+    clearDisplay();
     displayOn();
 }
 
 // Turns display on.
 void displayOn(void)
 {
-    sendcommand(0xAF);        //display on
+    sendCommand(0xAF);        //display on
 }
 
 // Turns display off.
 void displayOff(void)
 {
-    sendcommand(0xAE);    //display off
+    sendCommand(0xAE);    //display off
 }
 
 // Clears the display by sendind 0 to all the screen map.
-static void clear_display(void)
+static void clearDisplay(void)
 {
     unsigned char k;
     for(k = 0; k < height / 8; k++)
     { 
         setXY(k,0);    
+        for(int i = 0; i < (128 + 2 * offset); i++)     //locate all COL
         {
-            for(int i = 0; i < (128 + 2 * offset); i++)     //locate all COL
-            {
-                SendChar(0);         //clear all COL
-                //delay(10);
-            }
+            sendChar(0);         //clear all COL
+            //delay(10);
         }
     }
 }
 
 // Clears the display by sendind 0 to all the screen map.
-static void clear_row(unsigned char k)
+static void clearRow(unsigned char k)
 {
-    setXY(k,0);    
+    setXY(k, 0);    
+    for(int i = 0; i < (128 + 2 * offset); i++)     //locate all COL
     {
-        for(int i = 0; i < (128 + 2 * offset); i++)     //locate all COL
-        {
-            SendChar(0);         //clear all COL
-            //delay(10);
-        }
+        sendChar(0);         //clear all COL
+        //delay(10);
     }
 }
 
 // Actually this sends a byte, not a char to draw in the display. 
 // Display's chars uses 8 byte font the small ones and 96 bytes
 // for the big number font.
-static void SendChar(unsigned char data) 
+static void sendChar(unsigned char data) 
 {
     //if (interrupt && !doing_menu) return;   // Stop printing only if interrupt is call but not in button functions
     
-    Wire.beginTransmission(OLED_address); //begin transmitting
+    Wire.beginTransmission(OLEDaddress); //begin transmitting
     Wire.write(0x40);                     //data mode
     Wire.write(data);
     Wire.endTransmission();               //stop transmitting
@@ -206,8 +202,8 @@ static void SendChar(unsigned char data)
 // and 8 ROWS (0-7).
 static void sendCharXY(unsigned char data, int X, int Y)
 {
-    setXY(X,Y);
-    Wire.beginTransmission(OLED_address); //begin transmitting
+    setXY(X, Y);
+    Wire.beginTransmission(OLEDaddress); //begin transmitting
     Wire.write(0x40);                     //data mode
     
     for (int i = 0; i < fontWeigth; i++)
@@ -217,9 +213,9 @@ static void sendCharXY(unsigned char data, int X, int Y)
 }
 
 // Used to send commands to the display.
-static void sendcommand(unsigned char com)
+static void sendCommand(unsigned char com)
 {
-    Wire.beginTransmission(OLED_address);     //begin transmitting
+    Wire.beginTransmission(OLEDaddress);     //begin transmitting
     Wire.write(0x80);                         //command mode
     Wire.write(com);
     Wire.endTransmission();                   //stop transmitting
@@ -228,9 +224,9 @@ static void sendcommand(unsigned char com)
 // Set the cursor position in a 16 COL * 8 ROW map.
 static void setXY(unsigned char row, unsigned char col)
 {
-    sendcommand(0xB0 + row);                      //set page address
-    sendcommand(offset + (8 * col & 0x0F));       //set low col address
-    sendcommand(0x10 + ((8 * col >> 4) & 0x0F));  //set high col address
+    sendCommand(0xB0 + row);                      //set page address
+    sendCommand(offset + (8 * col & 0x0F));       //set low col address
+    sendCommand(0x10 + ((8 * col >> 4) & 0x0F));  //set high col address
 }
 
 // Prints a string regardless the cursor position.
@@ -240,7 +236,7 @@ static void sendStr(unsigned char *string)
     while(*string)
     {
         for(i = 0; i < fontWeigth; i++)
-            SendChar(pgm_read_byte(myFont[*string - 0x20] + i));
+            sendChar(pgm_read_byte(myFont[*string - 0x20] + i));
         *string++;
     }
 }
@@ -254,66 +250,66 @@ static void sendStrXY(const char *string, int X, int Y)
     while(*string)
     {
         for(i = 0; i < fontWeigth; i++)
-            SendChar(pgm_read_byte(myFont[*string - 0x20] + i));
+            sendChar(pgm_read_byte(myFont[*string - 0x20] + i));
         *string++;
     }
 }
 
 // Inits oled and draws logo at startup
-static void init_OLED(void)
+static void initOLED(void)
 {
     displayOff();
     // Adafruit Init sequence for 128x64 OLED module
-    sendcommand(0xAE);    //DISPLAYOFF
-    sendcommand(0xD5);    //SETDISPLAYCLOCKDIV
-    sendcommand(0x80);    // the suggested ratio 0x80
-    sendcommand(0xA8);    //SSD1306_SETMULTIPLEX
+    sendCommand(0xAE);    //DISPLAYOFF
+    sendCommand(0xD5);    //SETDISPLAYCLOCKDIV
+    sendCommand(0x80);    // the suggested ratio 0x80
+    sendCommand(0xA8);    //SSD1306_SETMULTIPLEX
     if (height == 64)
-        sendcommand(0x3F);  // for 128x64
+        sendCommand(0x3F);  // for 128x64
     else
-        sendcommand(0x1F);  // for 128x32
-    sendcommand(0xD3);    //SETDISPLAYOFFSET
-    sendcommand(0x0);     //no offset
-    sendcommand(0x40 | 0x0);    //SETSTARTLINE
-    sendcommand(0x8D);    //CHARGEPUMP
-    sendcommand(0x14);
-    sendcommand(0x20);    //MEMORYMODE
-    sendcommand(0x00);    //0x0 act like ks0108
+        sendCommand(0x1F);  // for 128x32
+    sendCommand(0xD3);    //SETDISPLAYOFFSET
+    sendCommand(0x0);     //no offset
+    sendCommand(0x40 | 0x0);    //SETSTARTLINE
+    sendCommand(0x8D);    //CHARGEPUMP
+    sendCommand(0x14);
+    sendCommand(0x20);    //MEMORYMODE
+    sendCommand(0x00);    //0x0 act like ks0108
     
-    //sendcommand(0xA0 | 0x1);    //SEGREMAP   //Rotate screen 180 deg
-    sendcommand(0xA0);
+    //sendCommand(0xA0 | 0x1);    //SEGREMAP   //Rotate screen 180 deg
+    sendCommand(0xA0);
     
-    //sendcommand(0xC8);    //COMSCANDEC  Rotate screen 180 Deg
-    sendcommand(0xC0);
+    //sendCommand(0xC8);    //COMSCANDEC  Rotate screen 180 Deg
+    sendCommand(0xC0);
     
-    sendcommand(0xDA);     //COMSCANDEC
+    sendCommand(0xDA);     //COMSCANDEC
     if (height == 64)       //
-        sendcommand(0x12);  // for 128x64
+        sendCommand(0x12);  // for 128x64
     else
-        sendcommand(0x02);  // for 128x32
-    sendcommand(0x81);     //SETCONTRAS
+        sendCommand(0x02);  // for 128x32
+    sendCommand(0x81);     //SETCONTRAS
     if (height == 64)       //
-        sendcommand(0xCF);  // for 128x64
+        sendCommand(0xCF);  // for 128x64
     else
-        sendcommand(0x8F);  // for 128x32
-    sendcommand(0xd9);     //SETPRECHARGE 
-    sendcommand(0xF1); 
-    sendcommand(0xDB);     //SETVCOMDETECT                
-    sendcommand(0x40);
-    sendcommand(0xA4);     //DISPLAYALLON_RESUME        
-    sendcommand(0xA6);     //NORMALDISPLAY             
+        sendCommand(0x8F);  // for 128x32
+    sendCommand(0xd9);     //SETPRECHARGE 
+    sendCommand(0xF1); 
+    sendCommand(0xDB);     //SETVCOMDETECT                
+    sendCommand(0x40);
+    sendCommand(0xA4);     //DISPLAYALLON_RESUME        
+    sendCommand(0xA6);     //NORMALDISPLAY             
     
-    clear_display();
-    sendcommand(0x2e);     // stop scroll
+    clearDisplay();
+    sendCommand(0x2e);     // stop scroll
     //----------------------------REVERSE comments----------------------------//
-    sendcommand(0xa0);     //seg re-map 0->127(default)
-    sendcommand(0xa1);     //seg re-map 127->0
-    sendcommand(0xc8);
+    sendCommand(0xa0);     //seg re-map 0->127(default)
+    sendCommand(0xa1);     //seg re-map 127->0
+    sendCommand(0xc8);
     delay(1000);
     //----------------------------REVERSE comments----------------------------//
-    //sendcommand(0xa7);    //Set Inverse Display  
-    //sendcommand(0xae);    //display off
-    sendcommand(0x20);     //Set Memory Addressing Mode
-    sendcommand(0x00);     //Set Memory Addressing Mode ab Horizontal addressing mode
-    //sendcommand(0x02);    // Set Memory Addressing Mode ab Page addressing mode(RESET)  
+    //sendCommand(0xa7);    //Set Inverse Display  
+    //sendCommand(0xae);    //display off
+    sendCommand(0x20);     //Set Memory Addressing Mode
+    sendCommand(0x00);     //Set Memory Addressing Mode ab Horizontal addressing mode
+    //sendCommand(0x02);    // Set Memory Addressing Mode ab Page addressing mode(RESET)  
 }
