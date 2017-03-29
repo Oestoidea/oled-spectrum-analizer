@@ -5,7 +5,7 @@ This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's 
 This project helps to biuld spectrum analyzer on different modules. It contains next Wixel subprojects:
 
 * [_Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_2oleds_ssd1306)
-* [_Pololu Wixel_ with _ADF4351_ and SPI and/or I2C _OLED's SSD1306_ (noise generator)](./Wixel/Wixel_ADF4351)
+* [_Pololu Wixel_ with _ADF4351_ and SPI and/or I2C _OLED's SSD1306_ (noise generator)](./Wixel/Wixel_adf4351)
 * [_Pololu Wixel_ with two SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_3oleds_ssd1306)
 * [_Pololu Wixel_ with SPI _OLED SSD1331_](./Wixel/Wixel_oled_ssd1331)
 
