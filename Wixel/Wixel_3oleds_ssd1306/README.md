@@ -28,25 +28,15 @@ Connect OLED's to Wixel as shown on the picture.
 
 ## Connection Map
 
-| Wixel    | SPI0 OLED     |
-| -------- | ------------- |
-| P0_1     | RES           |
-| P0_2     | D/C           |
-| P0_3     | DIN (SDA)     |
-| P0_4     | CS            |
-| P0_5     | CLK           |
-| 3V3      | VCC           |
-| GND      | GND           |
-
-| Wixel    | SPI1 OLED     |
-| -------- | ------------- |
-| P1_3     | RES           |
-| P1_4     | CS            |
-| P1_5     | CLK           |
-| P1_6     | DIN (SDA)     |
-| P1_7     | D/C           |
-| 3V3      | VCC           |
-| GND      | GND           |
+| SPI0 Wixel | SPI1 Wixel | SPI OLED   |
+| ---------- | ---------- | ---------- |
+| P0_1       | P1_3       | RES        |
+| P0_2       | P1_7       | D/C        |
+| P0_3       | P1_6       | DIN (SDA)  |
+| P0_4       | P1_4       | CS         |
+| P0_5       | P1_5       | CLK        |
+| 3V3        | 3V3        | VCC        |
+| GND        | GND        | GND        |
 
 | Wixel    | I2C OLED      |
 | -------- | ------------- |
