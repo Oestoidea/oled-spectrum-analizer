@@ -1,10 +1,11 @@
-This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's on Wixel, Arduino Nano, ESP8266 or Raspberry Pi.
+This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's on Wixel, Arduino Nano, ESP8266 or Raspberry Pi. An
 
 # Structure
 
 This project helps to biuld spectrum analyzer on different modules. It contains next Wixel subprojects:
 
 * [_Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_2oleds_ssd1306)
+* [_Pololu Wixel_ with _ADF4351_ and SPI and/or I2C _OLED's SSD1306_ (noise generator)](./Wixel/Wixel_ADF4351)
 * [_Pololu Wixel_ with two SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_3oleds_ssd1306)
 * [_Pololu Wixel_ with SPI _OLED SSD1331_](./Wixel/Wixel_oled_ssd1331)
 
@@ -22,6 +23,7 @@ And another subprojects:
 | Equipment    | OLED Chip | OLED Size and Interface | Spectrum | Channels | APs |      |
 | ------------ | --------- | ----------------------- |:--------:|:--------:|:---:| ---- |
 | Wixel        | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) | ✔ |  |  |  [🔗](./Wixel/Wixel_2oleds_ssd1306) |
+| Wixel        | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  | [🔗](./Wixel/Wixel_ADF4351) |
 | Wixel        | SSD1306   | 128×64 (2×SPI, I2C) | ✔ | ✔ |  | [🔗](./Wixel/Wixel_3oleds_ssd1306) |
 | Wixel        | SSD1331   | 96×64 (SPI) | ✔ | ✔ |  |  [🔗](./Wixel/Wixel_oled_ssd1331) |
 | Raspberry Pi 3, Wixel | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](./RPi) |
@@ -46,6 +48,7 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 
 * [X] To make a combination device with Arduino and ESP8266.
 * [ ] To add in Raspberry Pi project another low-cost ISM spectrum analyzers (Metageek Wi-Spy 2.4i and 2.4x, Ubiquiti AirView2, Wi-detector, and TI eZ430-RF2500) by USB.
+* [X] To make a noise generator for 2.4 GHz band.
 * [ ] To connect Cypress CYWUSB6935 module to Arduino and STM32 by SPI.
 * [ ] To connect nRF24L01 module to Arduino and STM32 by SPI.
 * [ ] To connect CC2500 module to STM32 with OLED indication.
