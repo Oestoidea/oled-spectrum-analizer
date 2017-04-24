@@ -59,12 +59,14 @@ static uint8 XDATA freqReg[25] = // default 2401 MHz
 static uint8 XDATA adfInitData[24] = // default 2412 MHz - 1st wi-fi channel
 {
 	0x00, 0x58, 0x00, 0x05,
-	0x00, 0x8C, 0x80, 0x3C, 
+	0x00, 0x8C, 0x80, 0x3C, // +5dBm 0x3C | +2dBm 0x34 | -1dBm 0x2C | -4dBm 0x24
 	0x00, 0x00, 0x04, 0xB3, 
 	0x00, 0x00, 0x4E, 0x42, 
 	0x08, 0x00, 0x80, 0xC9, 
 	0x00, 0x30, 0x00, 0x60
 };
+
+uint8 XDATA report[21];
 
 // 4-wire SPI0
 #define RESlow      setDigitalOutput(1,0)   // P0_1 to RES
@@ -171,7 +173,7 @@ void adfSpi1Init(void)
     }
 }
 
-void oledI2CFramePreamble(void)
+void oledI2cFramePreamble(void)
 {
     uint8 i;
     uint8 oledInitData[8] =
@@ -189,7 +191,7 @@ void oledI2CFramePreamble(void)
     i2cStop();
 }
 
-void oledSPIFramePreamble(void)
+void oledSpiFramePreamble(void)
 {
     uint8 i;
     uint8 oledInitData[6] =
@@ -279,23 +281,57 @@ uint8 power(uint8 base, uint16 n)
     return p;
 }
 
-uint16 letterView(int8 number, uint16 position) // number use ASCII code
+void oledClear(void)
+{
+	uint16 j;
+	
+	for (j = 0; j < 1024; j++)
+        txData[j] = 0x00;
+}
+
+uint16 oledLetter(int8 character, uint16 position, BIT upsideDown) // number use ASCII code
 {
 	uint8 col;
 	uint8 reverse;
 	
 	for (col = 0; col < 6; col++)
 	{
-		reverse = myFont6[number - 0x20][col];
-		
-		reverse = (reverse & 0x55) <<  1 | (reverse & 0xAA) >>  1;
-		reverse = (reverse & 0x33) <<  2 | (reverse & 0xCC) >>  2;
-		reverse = (reverse & 0x0F) <<  4 | (reverse & 0xF0) >>  4;
-		
-		txData[position] = reverse;
-		position--;
+		if (upsideDown)
+		{
+			reverse = myFont6[character - 0x20][col];
+			reverse = (reverse & 0x55) <<  1 | (reverse & 0xAA) >>  1;
+			reverse = (reverse & 0x33) <<  2 | (reverse & 0xCC) >>  2;
+			reverse = (reverse & 0x0F) <<  4 | (reverse & 0xF0) >>  4;
+			txData[position] = reverse;
+			position--;
+		}
+		else
+		{
+			txData[position] = myFont6[character - 0x20][col];
+			position++;
+		}
 	}
 	return position;
+}
+
+void oledRow(uint8 reportLength, uint8 row, BIT upsideDown)
+{
+	uint8 k;
+	uint16 position;
+	uint8 letter;
+	
+	if (row >= 1 && row <= 8)
+		position = upsideDown ? (1023 - 128 * (row - 1)) : (128 * (row - 1));
+	else
+		position = upsideDown ? 1023 : 0;
+	
+	for (k = 0; k < reportLength; k++)
+	{
+		letter = (uint8)report[k];
+
+		if (letter >= 0x20 && letter != 0xD0) // for special cyrillic symbols
+			position = oledLetter(letter, position, upsideDown);
+	}
 }
 
 uint8 byteToChannel(uint8 byte)
@@ -373,20 +409,22 @@ void adfSet(uint8 byte)
 void main()
 {
     BIT nack;
+	BIT upsideDown = 1;
     uint8 k;
     uint16 j;
     uint8 block;
     uint16 channel;
-	uint16 position;
-	uint8 byte = 12; // 1st wi-fi channel
+	uint8 byte = 12; 		// 1st wi-fi channel
 	uint8 wifiChannel = 1;
+	uint8 reportLength;
     
     systemInit();
     usbInit();
 	
-	setDigitalInput(0, 1); // pull-up
-	setDigitalInput(12, 1);
-	setDigitalInput(13, 1);
+	// Pull-up
+	setDigitalInput(0, 1);  // Pause
+	setDigitalInput(12, 1); // Channel inc
+	setDigitalInput(13, 1); // Channel dec
 	
     if (param_i2c_on)
     {
@@ -405,7 +443,7 @@ void main()
     
     checkRadioChannels();
     checkRadioChannels();
-
+	
     while(1)
     {
         boardService();
@@ -426,30 +464,29 @@ void main()
 		
 		// first time check
 		if (!isPinHigh(12)) // Measure voltage on P1_2
-			{
-				wifiChannel++;
-				if (wifiChannel > 14)
-					wifiChannel = 1;
-				byte = channelToByte(wifiChannel);
-				adfSet(byte);
-			}
+		{
+			wifiChannel++;
+			if (wifiChannel > 14)
+				wifiChannel = 1;
+			byte = channelToByte(wifiChannel);
+			adfSet(byte);
+		}
 
 		if (!isPinHigh(13)) // Measure voltage on P1_3
-			{
-				wifiChannel--;
-				if (wifiChannel < 1)
-					wifiChannel = 14;
-				byte = channelToByte(wifiChannel);
-				adfSet(byte);
-			}
-        
+		{
+			wifiChannel--;
+			if (wifiChannel < 1)
+				wifiChannel = 14;
+			byte = channelToByte(wifiChannel);
+			adfSet(byte);
+		}
+	
         if (isPinHigh(0)) // Measure voltage on P0_0
         {
             updateLeds();
             checkRadioChannels();
             
-            for (j = 0; j < 1024; j++)
-                txData[j] = 0x00;
+			oledClear();
             
             j = 0;
             
@@ -475,56 +512,29 @@ void main()
             
 			// second time check
 			if (!isPinHigh(12)) // Measure voltage on P1_2
-				{
-					wifiChannel++;
-					if (wifiChannel > 14)
-						wifiChannel = 1;
-					byte = channelToByte(wifiChannel);
-					adfSet(byte);
-				}
+			{
+				wifiChannel++;
+				if (wifiChannel > 14)
+					wifiChannel = 1;
+				byte = channelToByte(wifiChannel);
+				adfSet(byte);
+			}
 
 			if (!isPinHigh(13)) // Measure voltage on P1_3
-				{
-					wifiChannel--;
-					if (wifiChannel < 1)
-						wifiChannel = 14;
-					byte = channelToByte(wifiChannel);
-					adfSet(byte);
-				}
+			{
+				wifiChannel--;
+				if (wifiChannel < 1)
+					wifiChannel = 14;
+				byte = channelToByte(wifiChannel);
+				adfSet(byte);
+			}
 		
-			position = 1023;
-
-			position = letterView(0x30 + 2, position); //frequency
-			position = letterView(0x30 + 4, position);
-			position = letterView(0x30 + byte / 10, position);
-			position = letterView(0x30 + byte % 10, position);
-			
-			position = letterView(0x20, position); // sp
-			position = letterView(0x4D, position); // MHz
-			position = letterView(0x48, position);
-			position = letterView(0x7A, position);
-
-			position = letterView(0x20, position); // sp	
-			position = letterView(0x20, position); // sp
-			
-			if (wifiChannel < 10) // channel
-			{
-				position = letterView(0x20, position); // sp
-				position = letterView(0x30 + wifiChannel, position);
-			}
-			else
-			{
-				position = letterView(0x30 + wifiChannel / 10, position);
-				position = letterView(0x30 + wifiChannel % 10, position);
-			}
-			
-			position = letterView(0x20, position); // sp
-			position = letterView(0x63, position); // ch
-			position = letterView(0x68, position);
+			reportLength = sprintf(report, "24%2d MHz  %2d ch", byte, wifiChannel);
+			oledRow(reportLength, 1, upsideDown);
 			
             if (param_spi_on)
             {
-                oledSPIFramePreamble();
+                oledSpiFramePreamble();
                 
                 DChigh;
                 CSlow;
@@ -535,7 +545,7 @@ void main()
             
             if (param_i2c_on)
             {
-                oledI2CFramePreamble();
+                oledI2cFramePreamble();
                 
                 for (k = 0; k < 64; k++) {
                     i2cStart();
@@ -558,5 +568,5 @@ void main()
         }
         else
             LED_RED(1);
-    }
+	}
 }

@@ -2,11 +2,11 @@
 #include <Wire.h>
 #include "font.h"
 
-#define height 64                       // 64 or 32 for 128x64 or 128x32 OLEDs
+#define height 64                      // 64 or 32 for 128x64 or 128x32 OLEDs
 
 #define offset        0x00             // offset=0 for SSD1306 controller
-//#define offset        0x02            // offset=2 for SH1106 controller
-#define OLEDaddress  0x3c
+//#define offset      0x02             // offset=2 for SH1106 controller
+#define OLEDaddress   0x3c
 #define myFont        myFont6         
 #define fontWeigth    6
 
@@ -43,7 +43,6 @@ void setup(void) {
     WiFi.mode(WIFI_STA);
     WiFi.disconnect();
 
-    //sendStrXY("Setup done",0,0);
     delay(100);
     clearDisplay();
     
@@ -132,7 +131,6 @@ void loop(void) {
         }
     }
     Serial.println("");
-    
     
     // Wait a bit before scanning again
     delay(5000);
