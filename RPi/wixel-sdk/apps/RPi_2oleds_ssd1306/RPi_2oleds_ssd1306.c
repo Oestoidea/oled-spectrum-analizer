@@ -126,6 +126,8 @@ void main()
     usbInit();
     analyzerInit();
     
+    setDigitalInput(0, 1); // pull-up P0_0
+    
     //Data rate = 350 kbps
     //Modulation = MSK
     //Channel 0 frequency = 2403.47 MHz
