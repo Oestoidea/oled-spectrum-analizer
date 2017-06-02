@@ -17,7 +17,7 @@ This generator has a working frequency range from 35 to 4400 MHz, but for our pu
 
 ![Wixel_adf4351_photo](./pics/Wixel_adf4351.png)
  
-To achieve a stable initialization with the help of Arduino Nano failed, because the choice fell on Pololu Wixel (which also has a radio module on board). The built-in radio module allows organizing feedback and qualitatively assessing the operability of the transmitting circuit. When the noise generator was initialized, there was a problem with sending packets: every initialization word must be transmitted without pauses. For example, the first word “580005” in the program of the PulseView logic analyzer looks like this:
+To achieve a stable initialization with the help of Arduino Nano failed, because the choice fell on Pololu Wixel (which also has a radio module on board). The built-in radio module allows organizing feedback and qualitatively assessing the operability of the transmitting circuit. When the noise generator was initialized, there was a problem with sending packets: every initialization word must be transmitted without pauses. For example, the first word “00580005” in the program of the PulseView logic analyzer looks like this:
 
 ![Wixel_adf4351_photo](./pics/Wixel_adf4351_2.png)
  
