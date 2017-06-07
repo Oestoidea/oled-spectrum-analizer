@@ -22,7 +22,7 @@ And another subprojects:
 # Projects Comparison Table
 
 | Equipment    | OLED Chip | SPI | I2C | Spectrum | Channels | APs |      |
-| ------------ | --------- | --- | --- |:--------:|:--------:|:---:| ---- |
+| ------------ | --------- | ---:| ---:|:--------:|:--------:|:---:| ---- |
 | Pololu Wixel | SSD1306   | 128×64 | 128×64, 128×32 | ✔ |  |  |  [🔗](./Wixel/Wixel_2oleds_ssd1306) |
 | Pololu Wixel | SSD1306   | 128×64 | 128×64 | ✔ |  |  | [🔗](./Wixel/Wixel_ADF4351) |
 | Pololu Wixel | SSD1306   | [2×]128×64 | 128×64 | ✔ | ✔ |  | [🔗](./Wixel/Wixel_3oleds_ssd1306) |
@@ -40,9 +40,9 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 * [Pololu Wixel](./fritzing-parts/Wixel.fzpz) 
 * OLED 0.96" 128×64 [SPI](./fritzing-parts/OLED-0.96-128x64-SPI-SSD1306.fzpz) or [I2C](./fritzing-parts/OLED-0.96-128x64-I2C-SSD1306.fzpz) SSD1306
 * [OLED 0.95" 96×64 SPI SSD1331](./fritzing-parts/OLED-0.95-96x64-SPI-SSD1331.fzpz)
-* [CC2500+PA+LNA](./fritzing-parts/CC2500-PA-LNA.fzpz)
-* [nRF24L01](./fritzing-parts/nRF24L01.fzpz)
-* [ESP8266-1](./fritzing-parts/ESP8266-1.fzpz)
+* [TI CC2500+PA+LNA](./fritzing-parts/CC2500-PA-LNA.fzpz)
+* [Nordic nRF24L01](./fritzing-parts/nRF24L01.fzpz)
+* [Espressif ESP8266-1](./fritzing-parts/ESP8266-1.fzpz)
 
 # Task List
 
