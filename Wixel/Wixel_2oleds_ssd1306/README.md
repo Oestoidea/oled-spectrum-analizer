@@ -4,9 +4,9 @@ Spectrum analyzer on Pololu Wixel with SPI and/or I2C OLED's SSD1306. This schem
 
 ## Equipment
 
-1. Pololu Wixel ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-2. OLED 0.96" 128×64 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
-3. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz))
+1. Pololu Wixel ([fritzing part](../../fritzing-parts/Wixel.fzpz))
+2. OLED 0.96" 128×64 ([fritzing part](../../fritzing-parts/OLED-0.96-128x64-I2C-SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
+3. OLED 0.96" 128×64 SPI SSD1306 ([fritzing part](../../fritzing-parts/OLED-0.96-128x64-SPI-SSD1306.fzpz))
 
 ![Wixel_2oleds_ssd1306_photo](./pics/Wixel_2oleds_ssd1306.png)
 
