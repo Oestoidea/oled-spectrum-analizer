@@ -4,8 +4,8 @@ Noise generators are commonly used for scientific experiments and for testing tr
 
 ## Equipment
 
-1. Pololu Wixel ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-2. OLED 0.96" 128×64 I2C ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)) or SPI ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz)) SSD1306
+1. Pololu Wixel ([fritzing part](../../fritzing-parts/Wixel.fzpz))
+2. OLED 0.96" 128×64 I2C ([fritzing part](../../fritzing-parts/OLED-0.96-128x64-I2C-SSD1306.fzpz)) or SPI ([fritzing part](../../fritzing-parts/OLED-0.96-128x64-SPI-SSD1306.fzpz)) SSD1306
 3. ADF4351 Development Board
 
 ![Wixel_adf4351_photo](./pics/Wixel_adf4351_5.png)
