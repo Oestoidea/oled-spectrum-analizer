@@ -5,7 +5,7 @@ Spectrum analyzer ESP8266 on with I2C OLED's SSD1306. Displays first four APs wi
 ## Equipment
 
 1. ESP8266 ([ESP-01 fritzing part](../../fritzing-parts/ESP8266-1.fzpz))
-2. OLED 0.96" 128×64 ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
+2. OLED 0.96" 128×64 ([fritzing part](../../fritzing-parts/OLED-0.96-128x64-I2C-SSD1306.fzpz)) or 0.91" 128×32 I2C SSD1306
 3. AMS1117 module (or LM1117)
 
 ![ESP8266_oled_list_ssd1306_photo](./pics/ESP8266_oled_list_ssd1306.png)
