@@ -28,6 +28,7 @@ And another subprojects:
 | Wixel        | SSD1331   | 96×64 (SPI) | ✔ | ✔ |  |  [🔗](./Wixel/Wixel_oled_ssd1331) |
 | Raspberry Pi 3, Wixel | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](./RPi) |
 | Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | 128×64 (2×SPI, I2C) | ✔ |  |  |  [🔗](./Arduino_Nano) |
+| Arduino Nano v3, nRF24L01 | SSD1306   | 128×64 (I2C) | ✔ |  |  |  [🔗](./Arduino_Nano) |
 | ESP8266-1 | SSD1306   | 128×64 (SPI, I2C) |  | ✔ | ✔ |  [🔗](./ESP8266/ESP8266_oled_spectrum_ssd1306) |
 | ESP8266-1 | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) |  |  | ✔ | [🔗](./ESP8266/ESP8266_oled_list_ssd1306) |
 
@@ -47,10 +48,11 @@ Also you can find additional parts for [Fritzing](http://fritzing.org/home/) use
 ![oled-spectrum-analizer_photo](./pics/future.png)
 
 * [X] To make a combination device with Arduino and ESP8266.
-* [ ] To add in Raspberry Pi project another low-cost ISM spectrum analyzers (Metageek Wi-Spy 2.4i and 2.4x, Ubiquiti AirView2, Wi-detector, and TI eZ430-RF2500) by USB.
+* [ ] To add in Raspberry Pi project another low-cost ISM spectrum analyzers (Metageek Wi-Spy 2.4i and 2.4x, Ubiquiti AirView2, Wi-detector, and TI eZ430-RF2500) via USB.
 * [X] To make a noise generator for 2.4 GHz band.
-* [ ] To connect Cypress CYWUSB6935 module to Arduino and STM32 by SPI.
-* [ ] To connect nRF24L01 module to Arduino and STM32 by SPI.
+* [ ] To connect Cypress CYWUSB6935 module to Arduino and STM32 via SPI.
+* [X] To connect nRF24L01 module to Arduino via SPI.
+* [ ] To connect nRF24L01 module to STM32 via SPI.
 * [ ] To connect CC2500 module to STM32 with OLED indication.
 
 ![oled-spectrum-analizer_photo](./pics/ESP8266.png)
