@@ -1,13 +1,13 @@
-This project created to show ISM 2.4 GHz spectrum on SSD1306 and SSD1331 OLED's on Wixel, Arduino Nano, ESP8266 or Raspberry Pi.
+This project created to show ISM 2.4 GHz spectrum on SSD1306 or SSD1331 OLED's on Pololu Wixel, Arduino Nano, ESP8266 or Raspberry Pi.
 
 # Structure
 
-This project helps to biuld spectrum analyzer on different modules. It contains next Wixel subprojects:
+This project helps to biuld spectrum analyzer on different modules. It contains next Pololu Wixel subprojects:
 
-* [_Pololu Wixel_ with SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_2oleds_ssd1306)
-* [_Pololu Wixel_ with _ADF4351_ and SPI and/or I2C _OLED's SSD1306_ (noise generator)](./Wixel/Wixel_adf4351)
-* [_Pololu Wixel_ with two SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_3oleds_ssd1306)
-* [_Pololu Wixel_ with SPI _OLED SSD1331_](./Wixel/Wixel_oled_ssd1331)
+* [_Wixel_ with SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_2oleds_ssd1306)
+* [_Wixel_ with _ADF4351_ and SPI and/or I2C _OLED's SSD1306_ (noise generator)](./Wixel/Wixel_adf4351)
+* [_Wixel_ with two SPI and/or I2C _OLED's SSD1306_](./Wixel/Wixel_3oleds_ssd1306)
+* [_Wixel_ with SPI _OLED SSD1331_](./Wixel/Wixel_oled_ssd1331)
 
 ![oled-spectrum-analizer_photo](./Wixel/Wixel_3oleds_ssd1306/pics/Wixel_3oleds_ssd1306_2.png)
 
@@ -30,18 +30,17 @@ And another subprojects:
 | Raspberry Pi 3, Wixel | SSD1306   | 128×64 (SPI, I2C) | ✔ |  |  |  [🔗](./RPi) |
 | Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | 128×64 (2×SPI, I2C) | ✔ |  |  |  [🔗](./Arduino_Nano/Arduino_Nano_CC2500) |
 | Arduino Nano v3, nRF24L01 | SSD1306   | 128×64 (I2C) | ✔ |  |  |  [🔗](./Arduino_Nano/Arduino_Nano_nRF24L01) |
-| ESP8266-1 | SSD1306   | 128×64 (SPI, I2C) |  | ✔ | ✔ |  [🔗](./ESP8266/ESP8266_oled_spectrum_ssd1306) |
-| ESP8266-1 | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) |  |  | ✔ | [🔗](./ESP8266/ESP8266_oled_list_ssd1306) |
+| ESP8266-1    | SSD1306   | 128×64 (SPI, I2C) |  | ✔ | ✔ |  [🔗](./ESP8266/ESP8266_oled_spectrum_ssd1306) |
+| ESP8266-1    | SSD1306   | 128×64 (SPI, I2C), 128×32 (I2C) |  |  | ✔ | [🔗](./ESP8266/ESP8266_oled_list_ssd1306) |
 
 # Fritzing Parts
 
 Also you can find additional parts for [Fritzing](http://fritzing.org/home/) used in this project schemes:
 
-* [Pololu Wixel](./fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz) 
-* [OLED 0.96" 128×64 SPI SSD1306](./fritzing-parts/OLED%200.96%20128x64%20SPI%20SSD1306.fzpz)
-* [OLED 0.96" 128×64 I2C SSD1306](./fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz)
-* [OLED 0.95" 96×64 SPI SSD1331](./fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz)
-* [CC2500+PA+LNA](./fritzing-parts/CC2500%2BPA%2BLNA.fzpz)
+* [Pololu Wixel](./fritzing-parts/Wixel.fzpz) 
+* OLED 0.96" 128×64 [SPI](./fritzing-parts/OLED-0.96-128x64-SPI-SSD1306.fzpz) or [I2C](./fritzing-parts/OLED-0.96-128x64-I2C-SSD1306.fzpz) SSD1306
+* [OLED 0.95" 96×64 SPI SSD1331](./fritzing-parts/OLED-0.95-96x64-SPI-SSD1331.fzpz)
+* [CC2500+PA+LNA](./fritzing-parts/CC2500-PA-LNA.fzpz)
 * [nRF24L01](./fritzing-parts/nRF24L01.fzpz)
 * [ESP8266-1](./fritzing-parts/ESP8266-1.fzpz)
 
