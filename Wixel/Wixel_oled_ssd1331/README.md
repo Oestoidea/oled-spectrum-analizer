@@ -4,8 +4,8 @@ Spectrum analyzer on Pololu Wixel with SPI OLED's SSD1331. This scheme takes les
 
 ## Equipment
 
-1. Pololu Wixel ([fritzing part](../../fritzing-parts/OLED%200.96%20128x64%20I2C%20SSD1306.fzpz))
-2. OLED 0.95" 96×64 SPI SSD1331 ([fritzing part](../../fritzing-parts/OLED%200.95%2096x64%20SPI%20SSD1331.fzpz))
+1. Pololu Wixel ([fritzing part](../../fritzing-parts/Wixel.fzpz))
+2. OLED 0.95" 96×64 SPI SSD1331 ([fritzing part](../../fritzing-parts/OLED-0.95-96x64-SPI-SSD1331.fzpz))
 3. Four switchers.
 
 [![Wixel_oled_ssd1331_video](./pics/Wixel_oled_ssd1331_video.png)](https://www.youtube.com/watch?v=7rlPyKthjLw "Spectrum Analyzer 2.4 GHz on Wixel with OLED SSD1331")
