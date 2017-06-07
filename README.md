@@ -23,13 +23,13 @@ And another subprojects:
 
 | Equipment    | OLED Chip | SPI | I2C | Spectrum | Channels | APs |      |
 | ------------ | --------- | --- | --- |:--------:|:--------:|:---:| ---- |
-| Wixel        | SSD1306   | 128×64 | 128×64, 128×32 | ✔ |  |  |  [🔗](./Wixel/Wixel_2oleds_ssd1306) |
-| Wixel        | SSD1306   | 128×64 | 128×64 | ✔ |  |  | [🔗](./Wixel/Wixel_ADF4351) |
-| Wixel        | SSD1306   | [2×]128×64 | 128×64 | ✔ | ✔ |  | [🔗](./Wixel/Wixel_3oleds_ssd1306) |
-| Wixel        | SSD1331   | 96×64 |  | ✔ | ✔ |  |  [🔗](./Wixel/Wixel_oled_ssd1331) |
-| Raspberry Pi 3, Wixel | SSD1306   | 128×64 | 128×64 | ✔ |  |  |  [🔗](./RPi) |
-| Arduino Nano v3, TI CC2500+PA+LNA | SSD1306   | [2×]128×64 | 128×64 | ✔ |  |  |  [🔗](./Arduino_Nano/Arduino_Nano_CC2500) |
-| Arduino Nano v3, nRF24L01 | SSD1306   |  | 128×64 | ✔ |  |  |  [🔗](./Arduino_Nano/Arduino_Nano_nRF24L01) |
+| Pololu Wixel | SSD1306   | 128×64 | 128×64, 128×32 | ✔ |  |  |  [🔗](./Wixel/Wixel_2oleds_ssd1306) |
+| Pololu Wixel | SSD1306   | 128×64 | 128×64 | ✔ |  |  | [🔗](./Wixel/Wixel_ADF4351) |
+| Pololu Wixel | SSD1306   | [2×]128×64 | 128×64 | ✔ | ✔ |  | [🔗](./Wixel/Wixel_3oleds_ssd1306) |
+| Pololu Wixel | SSD1331   | 96×64 |  | ✔ | ✔ |  |  [🔗](./Wixel/Wixel_oled_ssd1331) |
+| Raspberry&nbsp;Pi&nbsp;3, Pololu&nbsp;Wixel | SSD1306   | 128×64 | 128×64 | ✔ |  |  |  [🔗](./RPi) |
+| Arduino&nbsp;Nano&nbsp;v3, TI&nbsp;CC2500+PA+LNA | SSD1306   | [2×]128×64 | 128×64 | ✔ |  |  |  [🔗](./Arduino_Nano/Arduino_Nano_CC2500) |
+| Arduino&nbsp;Nano&nbsp;v3, nRF24L01 | SSD1306   |  | 128×64 | ✔ |  |  |  [🔗](./Arduino_Nano/Arduino_Nano_nRF24L01) |
 | ESP8266-1    | SSD1306   | 128×64 | 128×64 |  | ✔ | ✔ |  [🔗](./ESP8266/ESP8266_oled_spectrum_ssd1306) |
 | ESP8266-1    | SSD1306   | 128×64 | 128×64, 128×32 |  |  | ✔ | [🔗](./ESP8266/ESP8266_oled_list_ssd1306) |
 
